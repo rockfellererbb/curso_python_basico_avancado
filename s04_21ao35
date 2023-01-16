@@ -1,0 +1,39 @@
+
+
+#Ex. 31
+#Leia um número e imprima seu antecessor e sucessor
+
+print(" Leia um número e imprima seu sucessor e antecessor")
+a = int(input(" Entre com um número: "))
+b = (a -1)
+c = (a + 1)
+print(" Os valores são",b,a,c)
+
+#Ex 32
+#Leia um número inteiro e impirma a soma do sucessor de seu triplo com o antecessor de seu dobro
+
+n = int(input("Entre com o valor do número: \n"))
+a = int(n-1)
+s = int(n+1)
+f = s*3 + a*2
+print("O valor final é",f)
+
+#Ex 33
+#Leia o tamanho de um lado de um quadrado e imprima sua área
+n = int(input("Entre com o valor do lado do quadrado: \n"))
+a = n*n
+
+print("O valor da área é",a,"metros quadrados")
+
+#Ex 34
+#Leia o valor do raio de um círculo e imprima sua área
+n = float(input("Entre com o valor do raio do círculo: \n"))
+a = float(round(3.141592*n**2,4))
+print("O valor da área é",a,"metros quadrados")
+
+#Ex 35
+#Faça um programa que leia os catetos de um triângulo e imprima sua hipotenusa
+a = float(input("Entre com o valor do cateto 1: \n"))
+b = float(input("Entre com o valor do cateto 2: \n"))
+h1 = ((a*a)+(b*b)**0.5)
+print("O valor da hipotenusa é",h1)
