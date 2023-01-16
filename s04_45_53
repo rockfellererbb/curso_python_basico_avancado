@@ -1,0 +1,130 @@
+#Ex 45
+#Faça um programa pra converter letras maíscula em mínuscula
+
+t = input("Entre com a palavra: \n")
+print(t.lower())
+
+#Ex. 46
+"""
+Faça um programa que leia um número e depois retorno o seu inverso.
+Exemplo:
+Leia:   987
+Imprima:789
+
+"""
+
+print(" Entre com o número: \n")
+a = list(input())
+print(list(reversed(a)))
+
+#OU método pós revisão
+
+print(" Entre com o número: \n")
+a = input()
+print(a[ : : -1])
+
+
+#Ex. 47
+"""
+Leia um número de 4 dígitos e imprima 1 dígito por linha
+"""
+
+numero_lido = input('Digite um numero inteiro e positivo entre 1000 e 9999: \n')
+print(numero_lido[0])
+print(numero_lido[1])
+print(numero_lido[2])
+print(numero_lido[3])
+
+#Ex. 48
+#Leia um valor inteiro em segundos e imprima-o em horas, minutos e segudos
+
+print(" Entre com o valor: \n")
+numero = float(input())
+
+#dividir o número dado por 60. O valor da divisão será a quantidade de minutos e o resto segundos.
+#caso a divisão seja superior a 60, repetir o procedimento
+
+seg = numero%60
+min = numero//60
+hora = min//60
+print(" O valor de horas é ", hora,"horas, minutos é ", min,"minutos e segundos é ", seg,"segundos"  )
+
+#Ex. 49
+#Faça um programa que leia o horário (hora, minuto e segundo) de início e a duração. em
+# segundos, de uma experiência biológica.O programa deve resultar com o novo horário (hora, minuto e segundo)
+#do término da experiência.
+
+#Aqui entraremos com o valor inicial do horário da experiência. Após isso uma outra entrada com a quantidade
+# de segundos que durou a experiência e o horário final da experiência.
+
+
+print(" Entre com o horário de início: ")
+h1 = float(input("Hora: "))
+m1 = float(input("Minuto: "))
+s1 = float(input("Segundo "))
+
+print(" Entre com o tempo em segundos da duração: ")
+sf = float(input())
+s2 = float(sf%60)
+m2 = float(sf//60)
+h2 = float(m2//60)
+
+hf = float(h1 + h2)
+mf = float(m1+m2)
+sf = float(s1+s2)
+
+print("O horário de término foi às",hf,"horas,",mf,"minutos e",sf,"segundos")
+
+#Ex. 50
+#Faça um programa que calcule o ano de nascimento de uma pessoa a partir da idade atual
+
+#Aqui entraremos com a idade atual dela e subtraímos o valor do ano corrente, resultando
+#no ano de nascimento da pessoa
+
+an = int(input("Entre com o ano do seu nascimento: "))
+ah = int(input("Entre com o ano atual: "))
+(idade) = int(ah - an)
+print("A sua idade atual é:", idade,"anos")
+
+#Ex. 51
+#Faça um programa que leia as coordenadas x e y de um ponto em R2 e dê a sua distância até a origem (0,0)
+
+#Entramoas com as coordenadas e calculamos a distância até a origem. A fórmula é a raiz quadrada das distâncias
+#ao quadrado
+
+valorx = float(input("Entre com o valor de X: \n"))
+valory = float(input("Entre com o valor de Y: \n"))
+d = float((valorx ** 2)) + float((valory ** 2))
+m = float((d ** 0.5))
+print("A distância do ponto até a coordenada (0, 0) é",m)
+
+#Ex. 52
+#3 amigos jogaram na lotérica. Caso eles ganhem, o prêmio deve ser repartido proporcionalmente ao valor
+# que cada um deu para a realização da aposta. Faça um programa que leia quanto cada apostador investiu,
+# o valor do prêmio e imprima quanto cada um ganharia do prêmio em base desse valor
+
+#Entramos com o valor total do premio, valor da participação de cada jogador e calculamos as % de cada
+
+tp = float(input("Entre com o valor total do prêmio: \n"))
+j1 = float(input("Entre com o valor de aposta do Jogador 1: \n"))
+j2 = float(input("Entre com o valor de aposta do Jogador 2: \n"))
+j3 = float(input("Entre com o valor de aposta do Jogador 3: \n"))
+jt = (j1+j2+j3)
+pj1 = float(j1/jt)
+pj2 = float(j2/jt)
+pj3 = float(j3/jt)
+p1 = float(round(tp*pj1, 2))
+p2 = float(round(tp*pj2, 2))
+p3 = round(tp*pj3, 2)
+print("O prêmio do jogador 1 é ",p1,"reais, jogador 2 é ",p2,"reais, e do jogador 3 é ",p3,"reais")
+
+#Ex 53
+# Faça um programa para ler as dimensões de um terreno (comprimento e largura) bem como o preço
+# do metro da tela. Imprima o custo para cercar este terreno com tela
+
+largura = int(input("Entre com o valor da largura: \n"))
+comprimento = int(input("Entre com o valor do comprimento do terreno: \n"))
+tela = float(input("Entre com o valor do metro da tela: \n"))
+perimetro = float(2*comprimento + 2*largura)
+custo = round(perimetro*tela, 2)
+print("O valor da tela para cercar o terreno é",custo,"reais")
