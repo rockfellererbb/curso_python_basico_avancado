@@ -1,0 +1,220 @@
+#Ex 15
+"""
+Faça um programa que leia um número inteiro positivo ímpar e imprima todos os números pares de 1 até N em ordem
+crescente
+"""
+
+numbers = []
+n = int(input("Entre com um número positivo e ímpar: "))
+while (n%2 == 0) or (n<=0):
+    n = int(input("Entre com um número positivo e ímpar: "))
+for num in range(1, n+1, 2):
+    numbers.append(num)
+print(numbers)
+
+#Ex 16
+"""
+Faça um programa que leia um número inteiro positivo ímpar e imprima todos os números pares de 1 até N em ordem
+decrescente
+"""
+
+numbers = []
+n = int(input("Entre com um número positivo e ímpar: "))
+while (n%2 == 0) or (n<=0):
+    n = int(input("Entre com um número positivo e ímpar: "))
+for num in range(n, 0, -2):
+    numbers.append(num)
+print(numbers)
+
+#Ex 17
+"""
+    Faça um programa que leia um número inteiro positivo e calcule a soma dos primeiros números naturais
+"""
+
+numbers = []
+n = int(input("Entre com um número positivo: "))
+while n<=0:
+    n = int(input("Entre com um número positivo: "))
+for num in range(0, n+1):
+    numbers.append(num)
+print(sum(numbers))
+
+#OU
+
+soma = 0
+i=1
+n = int(input("Entre com um número positivo: "))
+while i<=n:
+   soma = i + soma
+   i = i+1
+print("A soma dos números é",soma)
+
+#Ex 18
+"""
+Escreva um algoritomo que leia certa quantidade de números e imprima o maior deles e quantas vezes
+o maior número foi lido. A quantidade de números a serem lidos deve ser fornecida pelo usuário
+"""
+
+numbers = []
+v = int(input("Entre com a quantidade de números a serem lidos: "))
+while v<=0:
+   v = int(input("Entre com a quantidade de números a serem lidos: "))
+for i in range (v):
+    num = int(input("Entre com o número: "))
+    numbers.append(num)
+print("A quantidade de números é",v,"o maior número é",max(numbers))
+
+#Ex 19
+"""
+Escreva um algoritomo que leia um número entre 100 e 999 e imprima na saída cada um dos algarismo que
+compõe o número
+
+"""
+
+n = int(input("Entre com o número: "))
+while n<100 or n>999:
+   n = int(input("Entre com o número: "))
+c = n//100
+cd = round(n%100,1)
+d = cd//10
+de = cd%10
+u = de//1
+print("Os algarismos são",c, d, u)
+
+
+#Ex 20
+"""
+Ler uma sequência de números inteiros e determinar se eles são pares ou não.
+Deverá ser informado o número de dados lidos e números de valores pares. O processo
+termina quando for digitado o número 1000
+
+
+"""
+par = 1
+total = 1
+n = int(input("Entre com o número: "))
+while n!= 1000:
+    total = total + 1
+    if n%2==0:
+        par = par + 1
+    n = int(input("Entre com o número: "))
+print("O número de números pares é: " ,par,". O número total de números lidos é:" , total)
+
+
+#Ex 21
+"""
+Faça um programa que receba 2 números.Calcule e mostre
+a soma dos números pares desse intervalo, incluindo os digitados
+a multiplicação dos números ímpares, incluindo os digitados
+
+"""
+a = int(input("Entre com o primeiro número: "))
+b = int(input("Entre com o segundo número: "))
+c = min(a,b)
+d = max(a,b)
+soma = c
+i = c + 2
+if a==b:
+    b = int(input("Entre com o segundo número diferente do primeiro: "))
+#A soma dos pares:
+if c%2==0:
+    while i <=d:
+        soma = soma + i
+        i = i+2
+    print('A soma dos números pares é: ' ,soma)
+if c%2!=0:
+    c = c+1
+    i = c + 2
+    soma = c
+    while i <= d:
+        soma = soma + i
+        i = i + 2
+    print('A soma dos números pares é: ' ,soma)
+# Multiplicação dos ímpares
+print()
+if c%2==0:
+    c = c+1
+    mu = c
+    i = c+2
+    while i <=d:
+        mu = mu * i
+        i = i+2
+    print('A multiplicação dos números ímpares é: ',mu)
+else:
+    i = c + 2
+    mu = c
+    while i <= d:
+        mu = mu * i
+        i = i + 2
+    print('A multiplicação dos números ímpares é: ',mu)
+
+#Ex 22
+"""
+Escreva um programa completo que permita a qualquer aluno introduzir, pelo teclado uma sequência arbitrária de notas
+(válidas no intervalo de 10 a 20) e que mostre na tela, como resultado, a correspondente média aritimética.
+O número de notas com que o aluno pretende efetuar o cálculo não será fornecido pelo programa, o qual terminará
+quando for introduzido um valor que não seja válido como nota de aprovação.
+
+"""
+
+from statistics import mean
+dados =[]
+a = int(input("Entre com a nota: "))
+while a>=10 and a<=20:
+    dados.append(a)
+    a = int(input("Entre com a nota: "))
+print(mean(dados))
+
+#Ex 23
+"""
+Escreva um programa que leia um número positivo e imprima seus divisores
+
+"""
+
+n=1
+a = int(input("Entre com o número: "))
+while n<=a:
+    d = a/n
+    if a%n==0:
+        print("O número",n,"é divísel por",a)
+    n=n+1
+
+#Ex 24
+"""
+Escreva um programa que leia um número inteiro e calcule a soma de todos os divisores desse número, com exceção
+dele próprio. Ex: a soma dos divisores dos números 66 é 1+2+3+6+11+22+33=78
+
+"""
+soma=0
+n=1
+a = int(input("Entre com o número: "))
+while n<=a:
+    d = a%n
+    if d==0:
+        print("O número",n,"é divísel por",a)
+        soma = soma + n
+    n=n+1
+print("A soma dos números é: ", soma)
+
+#Ex 25
+"""
+Escreva um programa que some todos os números naturais abaixo de 1000 que são múltiplos de 3 ou 5
+
+"""
+soma=0
+n=1
+while n<=1000:
+    d=n%3
+    e=n%5
+    if d ==0 and e ==0:
+        soma = soma + n
+        print("os números divisíveis são: ",n)
+    n=n+1
+print("A soma dos números divisíveis por 3 e 5 são: ",soma)
+
+#Ex 26
+"""
+Escreva um programa que encontre o primeiro múltiplo de 11, 13 e 17 após um número dado
+
+"""
+#Esse programa ficou confuso pois 11,13 e 17 são primos, não há outro número além deles mesmo.
