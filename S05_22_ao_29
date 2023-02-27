@@ -1,0 +1,194 @@
+# Ex 22
+"""
+Leia a idade e o tempo de serviço de um trabalhador e escreva se ele pode ou não se aposentar.
+As condições pra aposentadoria são:
+Ter pelo menos 65 anos
+Ter trabalhado pelo menos 30 anos
+Ou ter pelo menos 60 anos e trabalhado pelo menos 25 anos
+"""
+
+a = int(input("Entre com o seu tempo de serviço: \n"))
+b = int(input("Entre com a sua idade \n"))
+if a >=30:
+    print("A sua aposentadoria foi autorizada")
+elif b >=65:
+    print("A sua aposentadoria foi autorizada")
+elif a>=25 and b>=60:
+    print("A sua aposentadoria foi autorizada")
+else:
+    print("A sua aposentadoria não foi autorizada")
+
+# Ex 23
+"""
+Faça um programa que leia se um ano é bissexto
+"""
+
+a = int(input("Entre com o ano desejado: \n"))
+if a%4==0:
+    print("O ano é bissexto.")
+else:
+    print(("O ano não é bissexto"))
+
+# Ex 24
+"""
+Uma empresa vende o mesmo produto para 4 estados diferentes.Cada estado possui uma taxa diferente de imposto
+sobre o produto(MG 7%, SP 12%, RJ 15%, MS 8%). Faça um programa em que o usuário entre com o valor do produto,
+o destino e o valor final com imposto.
+"""
+
+a = input("Entre com a sigla do estado da entrega: \n")
+v = float(input("Entre com o valor do produto: \n"))
+if a=='MG':
+    f = round(v*1.07, 2)
+    print("O valor final do produto é",f,"R$")
+elif a=='SP':
+    f = round(v*1.12, 2)
+    print("O valor final do produto é",f, "R$")
+elif a=='RJ':
+    f = round(v*1.15, 2)
+    print("O valor final do produto é",f, "R$")
+elif a=='MS':
+    f = round(v*1.08, 2)
+    print("O valor final do produto é",f, "R$")
+else:
+    print("O estado é inválido")
+
+# Ex 25
+"""
+Calcule as raízes de uma equação de 2º grau e imprima se ela contém 1 raíz real, 2 raízes reais ou nenhuma raíz real.
+"""
+import math
+a = float(input("Entre com o valor da primeira váriavel: \n"))
+b = float(input("Entre com o valor da segunda váriavel: \n"))
+c = float(input("Entre com o valor da terceira váriavel: \n"))
+if a !=0:
+    print("A equação é válida")
+    d = float(b * b - 4 * a * c)
+    if d < 0:
+        print("A equação não contém raíz real")
+    elif d==0:
+        r1 = float(-b + (d**0.5)) / 2 * a
+        print("A raíz contém uma raíz real sendo",r1)
+    elif d>0:
+        r2 = float(-b - (d**0.5)) / 2 * a
+        r1 = float(-b + (d ** 0.5)) / 2 * a
+        print("A raíz contém duas raizes reais sendo", r1, "e", r2)
+
+# Ex 26
+"""
+Leia a distância em km e a quantidade de litros de gasolina consumidos por um carro e calcule o consumo km/l
+e escreva uma mensagem de acordo com a tabela abaixo:
+<8 Venda o carro
+8 < 12 Economico
+> 12 super econômico
+"""
+import math
+d = float(input("Entre com a distância em km: \n"))
+b = float(input("Entre com a quantidade de l de gasolina gastos: \n"))
+c = d/b
+if c<8:
+    print("Venda o carro!")
+if 8<c<=12:
+    print("O carro é econômico!")
+if c>12:
+    print("O carro é super econômico!")
+
+# Ex 27
+"""
+Escreva um programa que, dada a idade do nadador, classifique-o em uma das seguintes categorias:
+Infantil A 5 a 7
+Infantil B 8 a 10
+Juvenil A 11 a 13
+Juvenil  B 13 a 17
+Sênior +18
+"""
+import math
+i = int(input("Entre com a idade do atleta: \n"))
+if 5 <= i <= 7:
+    print("O atleta está na categoria Infantil A")
+elif 8 <= i <= 10:
+    print("O atleta está na categoria Infantil B")
+elif 11 <= i <= 13:
+    print("O atleta está na categoria Juvenil A")
+elif 13 <= i <= 17:
+    print("O atleta está na categoria Juvenil B")
+elif i>=18:
+    print("O atleta está na categoria Sênior")
+else:
+    print("Ele não está em nenhuma categoria")
+
+# Ex 28
+"""
+Faça um programa que leia 3 números inteiros positivos e efetue o cálculo de suas médias aritméticas, harmônicas,
+geométrica e ponderada.
+"""
+x = int(input('Primeiro número: '))
+y = int(input('Segundo número: '))
+z = int(input('Terceiro Número: '))
+print("""1 - Geométrica - raiz cúbica de x * y * z
+2 - Ponderada - (x + 2 * y +3 * z) / 6
+3 - Harmônica - 1 / (1 / x + 1 / y + 1 / z)
+4 - Aritmética - (x + y + z) / 3""")
+opcoes = ['Média Geométrica', 'Média Ponderada', 'Média Harmônica', 'Média Aritimética']
+matriz = [(x * y * z) ** (1 / 3), (x + 2 * y + 3 * z) / 6, 1 / (1 / x + 1 / y + 1 / z), (x + y + z) / 3]
+n = int(input('Escolha a sua operação: '))
+if 1 <= n <= 4:
+    print(f'{str(opcoes[n - 1])}')
+    print(f'{float(round(matriz[n - 1],2))}')
+#   print(f'{float(cmath.cbtr(x * y * z))}')
+else:
+    print('Operação inválidade, escolha uma opção de 1 a 4')
+
+# Ex 29
+"""
+Faça uma prova de matemática para crianças que estão aprendendo a somar números inteiros menores do que 100.
+Escolha números aleatórios entre 1 a 100, e mostre na tela a pergunta: qual a soma de a + b, onde a e b são
+os números aleatórios.Peça a resposta. Faça cinco perguntas ao aluno, e mostre pra ele as perguntas e respostas corretas
+além de quantas vezes o aluno acertou.
+
+"""
+import math
+import random
+a = random.randint(1, 100)
+b = random.randint(1, 100)
+c = random.randint(1, 100)
+d = random.randint(1, 100)
+e = random.randint(1, 100)
+f = random.randint(1, 100)
+print("O primeiro número é: ",a,"\nO segundo número é: ",b,"\nO terceiro número é: ",c,
+      "\nO quarto número é: ",d,"\nO quinto número é: ",e,"\nO sexto número é: ",f)
+print("Qual a soma de",a," + ",b,"?")
+r1 = int(input(" "))
+a1 = int(a+b)
+if r1==a1:
+    print("Parabéns, a resposta correta é",a1)
+else:
+    print("Sinto muito, a resposta correta é",a1)
+print("Qual a soma de",c," + ",d,"?")
+a2 = int(c+d)
+r2 = int(input(" "))
+if r2==a2:
+    print("Parabéns, a resposta correta é",a2)
+else:
+    print("Sinto muito, a resposta correta é",a2)
+print("Qual a soma de",e," + ",f,"?")
+a3 = int(e+f)
+r3 = int(input(" "))
+if r3==a3:
+    print("Parabéns, a resposta correta é",a3)
+else:
+    print("Sinto muito, a resposta correta é",a3)
+print("Qual a soma de",a," + ",f,"?")
+a4 = int(a+f)
+r4 = int(input(" "))
+if r4==a4:
+    print("Parabéns, a resposta correta é",a4)
+else:
+    print("Sinto muito, a resposta correta é",a4)
+print("Qual a soma de",b," + ",e,"?")
+a5 = int(b+e)
+r5 = int(input(" "))
+if r5==a5:
+    print("Parabéns, a resposta correta é",a5)
+else:
+    print("Sinto muito, a resposta correta é",a5)
