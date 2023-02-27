@@ -1,0 +1,91 @@
+# Ex 39
+"""
+Uma empresa decidar dar um aumento um aumento aos seus funcionários de acordo com
+com uma tabela que considera o salário atual e o tempo de serviço de cada funcionário.
+Os funcionários com menor salário terão um aumento proporcionalmente maior do que os funcionários
+com um salário maior, e conforme o tempo de serviço na empresa, cada funcionário irá receber
+um bônus adicional de salário. Faça um programa que leia
+- valor do salário atual do funcionário
+- o tempo de serviço
+calculo o novo salário
+"""
+
+s = float(input("Entre com o salário: "))
+t = int(input("Entre com o tempo de serviço: "))
+if s <= 500:
+    sf=s*1.25
+elif 500<s<=1000:
+    sf=s*1.2
+elif 1000<s<=1500:
+    sf=s*1.15
+elif 1500<s<2000:
+    sf=s*1.1
+elif s>=2000:
+    sf=s
+if t<1:
+    b=0
+elif 1<=t<=3:
+    b=300
+elif 4<=t<=6:
+    b=200
+elif 7<=t<=10:
+    b=300
+elif t>10:
+    b=500
+tf = round(sf+b,2)
+print("O salário final dele é",tf,"R$")
+
+# Ex 40
+"""
+O custo ao consumidor de um carro novo é a soma do custo de fábrica, da comissão
+do distribuidor e dos impostos. A comissão e o s impostos são calculados sobre o custo
+da fábria.Leia o custo de fábrica e escreva o custo ao consumidor
+
+até 12.000  - %distribuidor 5%  - imp isen
+12k a 25k   - 10%               - 15%
+>25k        - 15%               -20%
+"""
+
+c = float(input("Entre com o custo da fábrica: "))
+if c<=12_000:
+    d = c*1.05
+    i = 0
+elif 12_000 < c <=25_000:
+    d = c*1.10
+    i = c*1.15
+elif c>25_000:
+    d = c*1.15
+    i = c*1.20
+vf = round(c+d+i,2)
+print("O valor do carro é",vf,"R$")
+
+# Ex 41
+"""
+Faça um algoritmo que calcule o IMC de uma pessoa e mostre sua classificação de acordo
+com a tabela abaixo:
+<18.5           - Abaixo do peso
+18,6 - 24.9     - Saudável
+25 - 29.9       - Peso em excesso
+30 - 39.9       - Obesidade grau 1
+25 - 39.9       - Obesidade grau 2 severa
+>40             - Obesidade grau 3 mórbida
+"""
+
+h = float(input("Entre com a sua altura em m: "))
+p = float(input("Entre com o seu peso em kg: "))
+imc = round((p/(h*h)),2)
+if imc<=18.5:
+    print("Seu IMC é",imc,"você está abaixo do peso")
+elif 18.6 <= imc <= 24.9:
+    print("Seu IMC é",imc,"você está saudável")
+elif 25 <= imc <= 29.9:
+    print("Seu IMC é",imc,"você está com peso em excesso")
+elif 30 <= imc <= 34.9:
+    print("Seu IMC é",imc,"você está obeso em grau I")
+elif 35 <= imc <= 39.9:
+    print("Seu IMC é",imc,"você está obeso grau II (severa)")
+elif imc >=40:
+    print("Seu IMC é",imc,"você está obeso grau III (mórbido)")
+
+
+
