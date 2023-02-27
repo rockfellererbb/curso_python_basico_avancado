@@ -1,0 +1,426 @@
+#Ex 48
+"""
+Faça um programa que some os termos pares da sequência de Fibonacci, cujos valores não ultrapassem 4 milhões
+4_000_000
+
+
+"""
+
+
+i = 1
+a = 0
+f = 0
+ft = 0
+while f <4_000_000:
+    print(f)
+    f = i + a
+    i = a
+    a = f
+    if f%2==0:
+        ft = ft + f
+print("A soma dos números pares é",ft)
+
+while jcj < jcc:
+    n = n+1
+    jcj = float(sj * (((((1 + (ij/100)) ** sj) - 1) /(ij/100))))
+    print(f"{jcj:.2f}")
+print(f"{jcj:.2f}")
+
+#Ex 49
+"""
+O funcionário chamado Carlos tem um colega chamado João que recebe um salário
+que equivale a um terço do seu salário. Carlos gosta de fazer aplicações na cardeneta de poupança
+e vai aplicar seu salário integralmente nela, pois está rendendo 2% ao mês.
+
+João aplicará seu salário integralmente no fundo de renda fixa, que está rendendo 5% ao mês.
+Construa um programa que deverá calcular e mostrar a quantidade de meses necessários para que o valor
+pertencente a João iguale ou ultrapasse o valor pertencente a Carlos.
+
+Teste com outros valores para as taxas.
+
+"""
+sc = float(input("Entre com o salário do Carlos: "))
+ic = float(input("Entre com a taxa dos juros de Carlos: "))
+nc = int(input("Entre com o valor do tempo para Carlos: "))
+print()
+sj = float(sc/3)
+ij = float(input("Entre com o valor dos juros para João: "))
+nj = int(input("Entre com o valor do tempo de João: "))
+
+
+jcc = float(sc* (((1 + (ic / 100)) ** nc - 1) / (ic / 100)))
+print(f"{jcc:.2f}")
+
+jcj = float(sj* (((1 + (ij / 100)) ** nj - 1) / (ij / 100)))
+print(f"{jcj:.2f}")
+
+while jcj < jcc:
+    nj = nj+1
+    print(nj)
+    jcj = float(sj* (((1 + (ij / 100)) ** nj - 1) / (ij / 100)))
+print(f"O valor do patrimônio de João vai superar o de Carlos quando chegar em {nj:.2f} anos")
+
+#Ex 50
+"""
+Chico tem 1,50m e cresce 2cm por ano.Zé tem 1,10m e cresce 3cm/ano.
+Escreva um programa que calcule e imprima quantos anos serão necessários para que Zé seja maior que Chico.
+
+"""
+ano = 0
+ch = 1.5+2*ano
+ze = 1.1+3*ano
+while ze<=ch:
+    ano = ano+1
+    ch = 1.5+0.02*ano
+    ze = 1.1+0.03*ano
+print("Serão necessário",ano,"anos para que Zé ultrapasse a altura de Chico")
+
+#Ex 51
+"""
+Um funcionário recebe um aumento  anual.Em 1995 foi contrato por 2.000R$.Em 1996 recebeu um aumento de 1.5%.
+A partir de 1997 os aumentos sempre correspondem ao dobro do anterior.Faça um programa que determine o salário
+atual do funcionário.
+
+"""
+
+sal = int(2000)
+ano = int(1995)
+(ano2) = int(sal*1.5)
+print(ano2)
+desc = int(input("Qual ano você quer saber o salário? "))
+sal2 = desc-1996
+tot = sal2*2*ano2
+print("O salário dele em",desc,"será de",tot)
+
+
+#Ex 52
+"""
+Escreva um programa que receba como entrada o valor do saque realizado pelo cliente de um banco e retorne
+quantas notas de cada valor serão necessárias para atender ao saque com a menor quantidade de notas possível.
+Serão utilizadas notas de 100,50,20,10,5, 2 e 1.
+
+
+"""
+
+sq = int(input("Entre com o valor do saque: "))
+a = sq//100
+b = sq%100
+print(a,'notas de cem')
+if a<1 or b>0:
+    sq = b
+    c = b//50
+    d = b%50
+    print(c,"notas de 50")
+    if c<1 or d>0:
+        saque = d
+        e = d//20
+        f = d%20
+        print(e,"notas de 20")
+        if e<1 or f>0:
+            saque = f
+            g = f//10
+            h = f%10
+            print(g,"notas de 10")
+            if g<1 or h>0:
+                saque = h
+                i = h//5
+                j = h%5
+                print(i,"notas de 5")
+                if i<1 or j >0:
+                    saque=j
+                    l = j//2
+                    m = j%2
+                    print(l,"notas de 2")
+                    if l<1 or m>0:
+                        saque = l
+                        n = m//1
+                        print("notas de 1")
+
+#Ex 53
+"""
+Escreva um programa que leia um número N inteiro positivo e em seguida imprima N linhas do chamado triângulo
+de Floyd. para n=6 temos
+
+1
+2  3
+4  5  6
+7  8  9  10
+11 12 13 14 15
+16 17 18 19 20 21
+
+
+"""
+
+l = int(input('Digite o número de linhas: '))
+
+m = 1
+for c in range(1, l + 1):
+    for i in range(1, c + 1):
+        print(m, end=' ')
+        m += 1
+    print()
+
+#Ex 54
+"""
+Escreva um programa que leia um número maior que 1 e verifique se o número fornecido é primo ou não
+
+
+
+"""
+
+l = int(input('Digite o número: '))
+while l<=0:
+    l = int(input('Digite o número: '))
+den = l -1
+a = (l/den)
+div = 1
+while den>1:
+    if (l%den)==0:
+        print("O número",l," NÃO é primo")
+        break
+    else:
+        den=den-1
+        if den==1:
+            print("O número É primo")
+
+#Ex 55
+"""
+Escreva um programa que leia um número maior que 1 e imprima a soma dos n números primos.
+
+
+"""
+b = []
+l = int(input('Digite o número: '))
+while l<=0:
+    l = int(input('Digite o número: '))
+den = l -1
+a = (l/den)
+div = 1
+while l>=3:
+    while den>1:
+        if (l%den)==0:
+            print("O número",l," NÃO é primo")
+            break
+        else:
+            den=den-1
+            if den==1:
+                print("O número",l," É primo")
+                b.append(l)
+    l = l-1
+    den = l-1
+    print(l)
+    print(den)
+print("A soma dos números é",sum(b))
+print(b," 2, 1")
+
+#Ex 56
+"""
+Escreva um programa que calcule a soma de todos os números primos abaixo de 2 milhões
+
+"""
+b = []
+l = 2_000_000
+den = l -1
+a = (l/den)
+div = 1
+while l>=3:
+    while den>1:
+        if (l%den==0) or (l%2==0):
+            break
+        else:
+            den=den-1
+            if den==1:
+                print("O número",l," É primo")
+                b.append(l)
+    l = l-1
+    den = l-1
+print("A soma dos números é",sum(b))
+print(b," 2")
+
+#Ex 57
+"""
+Escreva um programa que conte quantos números primos existem entre a e b, onde a e b são informados pelo usuário
+
+"""
+
+c = int(input("Entre com o primeiro número: "))
+d = int(input("Entre com o segundo número: "))
+b = []
+l = d
+den = l -1
+a = (l/den)
+div = 1
+while l>=c:
+    while den>1:
+        if (l%den==0):
+            break
+        else:
+            den=den-1
+            if den==1:
+                print("O número",l," É primo")
+                b.append(l)
+    l = l-1
+    den = l-1
+print(b," 2")
+
+#Ex 58
+"""
+Escreva um programa que some números primos existem entre a e b, onde a e b são informados pelo usuário
+
+"""
+
+c = int(input("Entre com o primeiro número: "))
+d = int(input("Entre com o segundo número: "))
+b = []
+l = d
+den = l -1
+a = (l/den)
+div = 1
+while l>=c:
+    while den>1:
+        if (l%den==0):
+            break
+        else:
+            den=den-1
+            if den==1:
+                print("O número",l," É primo")
+                b.append(l)
+    l = l-1
+    den = l-1
+print(b," 2")
+print("A soma dos números é",sum(b))
+
+#Ex 59
+"""
+Escreva um programa que leia o número de habitantes de uma determinada cidade,
+o valor do kwh, e para cada habitante entre com os seguintes dados:
+consumo do mês e o código do consumidor (1-residencial, 2-comercial, 3-industrial).
+No final imprima o maior, o menor e a média do consumo dos habitantes
+e por fim o total do consumo de cada categoria de consumidor.
+"""
+from statistics import mean
+h = int(input("Entre com o total de habitantes: "))
+v = int(input("Entre com o valor do kw/h em R$: "))
+b = 1
+r = []
+cr = []
+cmr = []
+crcmr = []
+i = []
+ci = []
+t = []
+while b<=h:
+    c = int(input("Entre com o código de cliente.\n 1 - Residencial \n 2 - Comercial\n 3 - Industrial\n \n" ))
+    if c==1:
+        r.append(c)
+        cons = int(input("Entre com o consumo em kw/h: "))
+        cr.append(cons)
+        t.append(cons)
+    elif c==2:
+        cmr.append(c)
+        cons = int(input("Entre com o consumo em kw/h: "))
+        crcmr.append(cons)
+        t.append(cons)
+    elif c==3:
+        i.append(c)
+        cons = int(input("Entre com o consumo em kw/h: "))
+        ci.append(cons)
+        t.append(cons)
+
+    b = b+1
+print("O total de consumo de cada categoria foi: ")
+print(" Da categoria residencial foi",sum(cr),"\n Da categoria comercial foi",sum(crcmr),"\n Da categoria industrial foi",sum(ci))
+print("O maior consumo foi de", max(t)," o menor consumo foi de", min(t)," a média de consumo foi", mean(t))
+
+#Ex 60
+"""
+Faça um programa que leia vários números e mostre:
+a soma dos números
+a quantidade dos números digitados
+a média dos números
+o maior número
+o menor número
+a média dos números pares
+
+finalize a entrada com o número 0
+"""
+from statistics import mean
+
+n = int(input(" Entre com o número: "))
+t = []
+p = []
+while n!=0:
+    t.append(n)
+    if n%2==0:
+        p.append(n)
+    n = int(input(" Entre com o número: "))
+a = sum(t)
+b = len(t)
+c = mean(t)
+d = max(t)
+e = min(t)
+f = mean(p)
+print()
+print("soma dos números é",a)
+print("quantidade dos números digitados",b)
+print("média dos números",c)
+print("maior número",d)
+print("menor número",e)
+print("média dos números pares",f)
+
+#Ex 61
+"""
+Faça um programa que calcule o maior palíndromo feito a partir do produto de dois números de 3 dígitos.
+Ex: O maior palíndromo feito a partir do produto de dois dígitos é 9009 = 91*99
+"""
+from statistics import mean
+
+def eh_palindromo(n):
+    # Converte o número em string e verifica se a string é igual à sua inversa
+    return str(n) == str(n)[::-1]
+
+maior_palindromo = 0
+for i in range(100, 1000):
+    for j in range(i, 1000):
+        produto = i * j
+        if eh_palindromo(produto) and produto > maior_palindromo:
+            maior_palindromo = produto
+
+print(maior_palindromo)
+
+#Ex 62
+"""
+Se os números de 1 a 5 são escritos em palavras: um, dois, três, quatro, cinco;
+temos ao total: 2 + 4 + 4 + 6 + 5 =22 letras.
+Faça um programa que conte quantas letras seriam utilizadas se todos os números de 1 a 1000 fossem escritos em
+palavras.
+"""
+
+unidades = ['', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove']
+dezenas = ['', 'dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa']
+dezenas_especiais = ['dez', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove']
+centenas = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos']
+
+def num_letras_palavras(num):
+    if num == 1000:
+        return len('mil')
+    palavra = ''
+    if num // 100 > 0:
+        palavra += centenas[num//100]
+        if num % 100 != 0:
+            palavra += 'e'
+    if num % 100 < 10:
+        palavra += unidades[num % 10]
+    elif num % 100 < 20:
+        palavra += dezenas_especiais[num % 10]
+    else:
+        palavra += dezenas[(num % 100) // 10]
+        if num % 10 != 0:
+            palavra += 'e' + unidades[num % 10]
+    return len(palavra)
+
+total_letras = 0
+for i in range(1, 1001):
+    total_letras += num_letras_palavras(i)
+
+print(total_letras)
