@@ -1,0 +1,259 @@
+#Ex 27
+"""
+Em matemática, o número harmônico é designado por H(n) e é definido como a soma da série
+H = 1 + 1/2 + 1/3 + 1/n
+
+Faça um programa que leia um valor n e mostre sua série harmônica
+
+"""
+h=2
+total = 0
+n = int(input("Entre com um número inteiro e positivo: "))
+while n <=0:
+    n = int(input("Entre com um número inteiro e positivo: "))
+while h<=n:
+    s = 1/h
+    total = total + s
+    h = h+1
+f = round(1 + total,3)
+print("O valor da série harmônica de",n," é",f)
+
+#Ex 28
+"""
+Faça um programa que leia um valor N positivo e inteiro, calcule o mostre o valor de E:
+E = 1 + 1/2! + 1/3! + 1/n!
+"""
+
+from math import factorial
+h=2
+total = 0
+n = int(input("Entre com um número inteiro e positivo: "))
+while n <=0:
+    n = int(input("Entre com um número inteiro e positivo: "))
+while h<=n:
+    s = 1/factorial(h)
+    total = total + s
+    h = h+1
+f = round(1 + total,3)
+print("O valor da série de",n," é",f)
+
+#Ex 29
+"""
+Escreva um programa para calcular o valor da série para 5 termos:
+0 + 1/2! + 2/4! + 3/6! + 4/8!...
+"""
+
+from math import factorial
+h=1
+d=2
+total = 0
+while h<=5 and d<=10:
+    s = h/(factorial(d))
+    total = total + s
+    h = h+1
+    d = d+2
+f = total
+print("O valor da série de é",f)
+
+#Ex 30
+"""
+Faça programas para calcular as seguintes sequências:
+a = 1 + 2+ 3 +n
+b = 1 - 2 + 3 -4 +(2n - 1)
+c = 1 + 3 + 5 + 7 + (2n-1)
+"""
+import math
+a = 0
+b = 0
+c = 0
+d = 1
+sa = []
+sb = []
+sc = []
+total1 = 0
+total2 = 0
+total3 = 0
+
+n = int(input("Entre com um número inteiro e positivo: "))
+while n <=0:
+    n = int(input("Entre com um número inteiro e positivo: "))
+while a <= n:
+    total1 = total1 + a
+    a = a+1
+    if a<=n:
+        sa.append(a)
+
+
+while b <= (2*n-1):
+    b=b+1
+    if b%2!=0 and b<=(2*n-1):
+        sb.append(b)
+        total2=total2+b
+    if b%2==0 and b<=(2*n-1):
+        b = b*(-1)
+        sb.append(b)
+        total2=total2+b
+        b=b*(-1)
+
+
+while c <= (2*n-1):
+    c = c+1
+    if c%2!=0 and c<=n:
+        sc.append(c)
+        total3=total3+c
+
+print()
+print("O valor final da série 1 é:",total1)
+print("A série 1 é formada por:",sa)
+print()
+print("O valor final da série 2 é:",total2)
+print("A série 3 é formada por:",sb)
+print()
+print("O valor final da série 3 é:",total3)
+print("A série 3 é formada por:",sc)
+
+#Ex 31
+"""
+Faça um programa que  calcule e escreva o valor de S:
+
+S = 1/1 + 3/2 + 5/3 + 7/4 + 99/50
+
+"""
+import math
+from fractions import Fraction
+
+n = 1
+d = 1
+
+sn = []
+sd = []
+st = []
+
+total = 0
+
+while n <=99 and d<=50:
+    s = n/d
+    f = Fraction(s).limit_denominator()
+    st.append(s)
+    total = round(total + s,3)
+    n = n+2
+    d = d+1
+
+
+print()
+print("O valor final da série é:",total)
+print("A série é formada por:",st)
+
+#Ex 32
+"""
+Faça um lançamento de dois dados, d1 e d2, n vezes, e tenha como saída o número de cada lado do dado
+e a relação entre eles de cada lançamento.
+
+"""
+import random
+
+
+random_number1 = random.randint(1, 6)
+random_number2 = random.randint(1, 6)
+print("O dado 1 é",random_number1)
+print("O dado 2 é",random_number2)
+if random_number1==random_number2:
+    print("Os números são iguais")
+elif random_number1>random_number2:
+    d=random_number1-random_number2
+    print("O dado 1 é maior que o dado 2")
+    print("A diferença entre eles é",d)
+else:
+    d = random_number2 - random_number1
+    print("O dado 2 é maior que o dado 1")
+    print("A diferença entre eles é", d)
+
+#Ex 33
+"""
+Dados "N" e dois números inteiros positivos, "I" e "J", diferentes de 0, imprimir em ordem crescente os primeiros 'N' naturais de i ou j e ou de ambos.
+Exemplo:
+
+para
+n=6
+i=2
+j=3
+
+A saída deverá ser: 0, 2, 3, 4, 6,8
+
+A descrição do exercício está confusa, vou fazer em do que eu acredito que seria o correto
+"""
+
+
+
+i = int(input("Entre com um número inteiro e positivo: "))
+j = int(input("Entre com um número inteiro e positivo: "))
+n = int(input("Entre com um número inteiro, positivo e maior que os demais: "))
+while i<=0 or j<=0:
+    i = int("Entre com um número inteiro e positivo: ")
+    j = int("Entre com um número inteiro e positivo: ")
+while n < (i or j):
+    n = int("Entre com um número inteiro, positivo e maior que os demais: ")
+for a in range(n,0,-1):
+    d = (n%a)
+    e = (i%a)
+    f = (j%a)
+    if d==0 or e==0 or f==0:
+        print("O número ",a," é divisível")
+
+#Ex 34
+"""
+Faça um programa que calcule o menor número divisível por cada um dos números de 1 a 20.
+"""
+
+n=1
+d=1
+while n<=19:
+    m = d%n
+    if m==0:
+        n = n+1
+    else:
+        d = d+1
+        n=1
+print("o menor número divisível por todos os números de 1 a 20 é: ",d)
+
+#Programa levou 20s para calcular, segue abaixo versão ChatGPT:
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+def lcm_of_list(numbers):
+    lcm_value = numbers[0]
+    for i in range(1, len(numbers)):
+        lcm_value = lcm(lcm_value, numbers[i])
+    return lcm_value
+
+numbers = [i for i in range(1, 21)]
+print(lcm_of_list(numbers))
+
+#Ex 35
+"""
+Faça um programa que some os números ímpares de um intervalo definido pelo usuário.
+O usuário define o valor inicial do intervalo e o valor final e o programa deve efetuar a soma de todos os números ímpares
+contidos neste intervalo. Caso o usuário digite um valor inválido (começando por um valor maior que no final) deve ser
+escrito uma mensagem de erro na tela "Intervalo de valores inválidos" e o programa termina.
+
+
+"""
+
+a = int(input("Entre com o valor inicial: "))
+b = int(input("Entre com o valor final: "))
+total = 0
+if a>=b:
+    print("Intervalo de valores inválidos")
+if a%2==0:
+    for a in range (a+1, b+1, 2):
+        total += a
+elif a%2!=0:
+    for a in range(a, b+1, 2):
+        total += a
+print("A soma dos números ímpares é",total)
