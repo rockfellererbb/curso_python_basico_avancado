@@ -1,0 +1,125 @@
+# Ex 1
+#Faça um programa que receba dois números e mostra qual é o maior
+
+a = int(input("Entre com o primeiro número: \n"))
+b = int(input("Entre com o segundo número: \n"))
+if a > b:
+    print( a, "é maior que", b,".O primeiro número é maior que o segundo")
+elif b > a:
+    print( b,"é maior que",a,". O segundo número é maior que o primeiro")
+elif a == b:
+    print("Ambos números são iguais")
+
+# Ex 2
+#Leia um número fornecido pelo usuário. Se esse número for positivo, calcule a raiz quadrada dele.
+#Se for negativo, mostre uma mensagem dizendo que o número é inválido.
+
+a = float(input("Entre com o número: \n"))
+if a<0:
+    print("O número não apresenta raíz real")
+else:
+    b = a**0.5
+    print("A raíz quadrada é",b)
+
+# Ex 3
+#Leia um número real. Se o número for positivo imprima a raíz quadrada. Do contrário imprima esse
+#esse número ao quadrado
+
+a = float(input("Entre com o número: \n"))
+if a<0:
+    b= a**2
+    print("O quadrado dele é",b)
+else:
+    b = a**0.5
+    print("A raíz quadrada é",b)
+
+# Ex 4
+# Faça um programa que leia um número e , caso ele seja positivo, calcule e msotre:
+# O número digitado ao quadrado
+# A raíz quadrada desse número
+
+a = float(input("Entre com o número: \n"))
+if a < 0:
+    print("O número é inválido")
+else:
+    b = a**0.5
+    c = a**2
+    print(" A raíz quadrada é", b, "e o quadrado dele é", c)
+
+# Ex 5
+# Faça um programa que receba um número inteiro e verifique se este número é par ou ímpar
+
+a = int(input("Entre com o número: \n"))
+if a % 2 == 0:
+    print("O número é par")
+else:
+    print("O número é ímpar")
+
+# Ex6
+# Escreva um programa que, dado dois números inteiros, mostre na tela o maior delas
+# e a diferença entre eles.
+
+a = int(input("Entre com o primeiro número: \n"))
+b = int(input("Entre com o segundo número: \n"))
+if a > b:
+    print( a, "é maior que", b,".O primeiro número é maior que o segundo")
+    c = a-b
+elif b > a:
+    print( b,"é maior que",a,". O segundo número é maior que o primeiro")
+    c = b -a
+elif a == b:
+    print("Ambos números são iguais")
+    c = a - b
+print("A diferença entre eles é",c)
+
+# Ex 7
+# Escreva um programa que, dado dois números inteiros, mostre na tela o maior delas
+# e a diferença entre eles.
+
+a = int(input(" Entre com o primeiro número: \n"))
+b = int(input(" Entre com o segundo número: \n"))
+if a > b:
+    print(a, " é maior que", b, ". O primeiro número é maior que o segundo")
+elif b > a:
+    print(b, " é maior que", a, ". O segundo número é maior que o primeiro")
+elif a == b:
+    print(" Ambos números são iguais")
+
+# Ex 8
+# Faça um programa que leia 2 notas de um usuário, verifique se as notas são válidas e exiba na tela a média
+# das notas. Uma nota boa deve ser um valor entre 0 e 10. Caso a nota não seja válida esse fato deve ser
+# informado e encerrar o programa
+
+a = float(input(" Entre com a primeira nota: \n"))
+b = float(input(" Entre com a segunda nota: \n"))
+
+
+if (a < 10 and a > 0) and (b < 10 and b > 0):
+    m = (a+b)/2
+    print(" A média é ", m)
+else:
+    print("Uma nota foi digitada incorretamente")
+
+# Ex 9
+# Leia o salário de um trabalhador e o valor da prestação do empréstimo.Se a prestação for maior que 20%
+# do salário imprima: Empréstimo não concedido, caso contrário, empréstimo aprovado
+
+s = float(input(" Entre com o salário: \n"))
+p = float(input(" Entre com o valor da prestação: \n"))
+if (p > 1.2*s):
+    print(" O empréstimo não foi concedido ")
+else:
+    print(" O empréstimo foi autorizado")
+
+# Ex 10
+# Faça um programa que receba a altura e o sexo da pessoa e calcule e mostre seu peso ideal, utilizando as
+# fórmulas.
+
+s = int(input(" Se o sexo for masculino digite 1, se for feminino digite 2: \n"))
+h = float(input(" Entre com altura em metros: \n"))
+if (s == 1):
+    pi= (72.7 * h) - 58
+    print(" O seu peso ideal é", pi, "kilos")
+elif (s==2):
+    pi = (62.1 * h) - 44.7
+    print(" O seu peso ideal é", pi, "kilos")
