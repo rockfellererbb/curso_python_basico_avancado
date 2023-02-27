@@ -1,0 +1,238 @@
+# Ex 12
+# Faça um programa que leia um número inteiro maior que zero e imprima o seu logártimo.
+# Se o número for menor que zero uma mensagem de erro deve ser exibida
+
+
+a = int(input('Informe um número positivo maior que zero: '))
+import math
+if a>0:
+    b = math.log(a, 10)
+    print("O logáritmo é", b)
+else:
+    print("O número digitado é inváliodo")
+
+# Ex 13
+"""
+Faça um programa que calcule a média ponderada das notas de 3 provas.
+A primeira e a segunda prova tem peso 1 e a terceira tem peso 2. Ao final, mostrar a média
+do aluno e indicar se o aluno foi aprovado, sendo que pra ser aprovado a nota mínima é 60 pontos
+"""
+
+a = int(input('Entre com a primeira nota do aluno: \n'))
+b = int(input('Entre com a segunda nota do aluno: \n'))
+c = int(input('Entre com a terceira nota do aluno: \n'))
+media = (a+b+2*c)/4
+print("A média do aluno foi ",media)
+if media >= 60:
+    print("O aluno foi aprovado")
+else:
+    print('O aluno foi reprovado')
+
+#Ex 14
+"""
+A nota final de um aluno é calculada a partir de de 3 notas de 0 a 10, um trabalho de laboratório, uma
+avaliação semestral e a um exame final. A média das 3 notas mencionadas anteriormente obedece aos pesos:
+Trabalho de laboratório 2;
+Avaliação semestral 3
+Exame final 5
+De acordo com as notas temos:
+Reprovado (0 a 2.9)
+Recuperação (3 a 4.9)
+Aprovado (>5)
+"""
+#REFAZER
+tl = int(input("Entre com a nota do Trabalho de Laboratório: \n"))
+ase = int(input("Entre com a nota da Avaliação Semestral: \n"))
+ef = int(input("Entre com a nota do Exame Final: \n"))
+if  0 < tl or ase or ef <= 10.1:
+    media = round((tl * 2 + ase * 3 + ef * 5) / 10, 1)
+elif media >5:
+    print("A média final é: ",media," O aluno foi aprovado")
+elif 3 < media < 4.9:
+    print("A média final é: ",media," O aluno está de recuperação")
+elif media < 2.9:
+    print("A média final é: ",media," O aluno está reprovado")
+else:
+    print("A nota é inválida")
+
+# Ex 15
+"""
+Usando switch, escreva um programa que leia um número inteiro entre 1 e 7 e imprima
+o dia da semana correspondente a este número.Sendo 1 domingo
+"""
+
+n = int(input("Entre com um número de 1 a 7: \n"))
+if n == 1:
+    print("O dia é domingo")
+elif n == 2:
+    print("O dia é segunda")
+elif n == 3:
+    print("O dia é terça")
+elif n == 4:
+    print("O dia é quarta")
+elif n == 5:
+    print("O dia é quinta")
+elif n == 6:
+    print("O dia é sexta")
+elif n == 7:
+    print("O dia é sábado")
+if n >7 or n<=0:
+    print("O número é invalido")
+
+# Ex 16
+"""
+Usando switch, escreva um programa que leia um número inteiro entre 1 e 12 e imprima
+o mês correspondente a este número.
+"""
+
+n = int(input("Entre com um número de 1 a 12: \n"))
+if n == 1:
+    print("O mês é janeiro")
+elif n == 2:
+    print("O mês é fevereiro")
+elif n == 3:
+    print("O mês é março")
+elif n == 4:
+    print("O mês é abril")
+elif n == 5:
+    print("O mês é maio")
+elif n == 6:
+    print("O mês é junho")
+elif n == 7:
+    print("O mês é julho")
+elif n == 8:
+    print("O mês é agosto")
+elif n == 9:
+    print("O mês é setembro")
+elif n == 10:
+    print("O mês é outubro")
+elif n == 11:
+    print("O mês é novembro")
+elif n == 12:
+    print("O mês é dezembro")
+else:
+    print("O número é invalido")
+
+# Ex 17
+"""
+Faça um programa que calcule a área de um trapézio.
+"""
+
+h = int(input("Entre com a altura do trapézio \n"))
+if h > 0:
+    bmenor = int(input("Entre com o valor da base menor: \n"))
+    if bmenor >0:
+        bmaior = int(input("Entre com o valor da base maior \n"))
+        if bmaior >0:
+            s = ((bmaior + bmenor) * h) / 2
+            print("O valor da área do trapézio é", s)
+        else:
+            print("Os valores são inválidos")
+    else:
+        print("Os valores são inválidos")
+else:
+    print("Os valores são inválidos")
+
+#OU, APÓS REVISÃO
+
+h = int(input("Entre com a altura do trapézio \n"))
+bmenor = int(input("Entre com o valor da base menor: \n"))
+bmaior = int(input("Entre com o valor da base maior \n"))
+if bmaior and bmenor and h >0:
+    s = ((bmaior + bmenor) * h) / 2
+    print("O valor da área do trapézio é", s)
+else:
+    print("Os valores são inválidos")
+
+
+# Ex 18
+"""
+Faça um programa que mostre ao usuário um menu com 4 opções de operações matemáticas.
+O usuário escolhe uma das opções e o seu programa então pede dois valores numéricos e
+realiza a operação.
+"""
+
+o = int(input("Escolha uma operação: 1 soma - 2 subtração - 3 multiplpicação - 4 divisão \n"))
+a = int(input("Entre com o primeiro número: \n"))
+b = int(input("Entre com o segundo número \n"))
+if o ==1:
+    r = a + b
+    print("O resultado é:", r)
+elif o==2:
+    r = a-b
+    print("O resultado é:", r)
+elif o==3:
+    r = a*b
+    print("O resultado é:", r)
+elif o==4:
+    r = a/b
+    print("O resultado é:", r)
+else:
+    print("Dados inválidos")
+
+
+# Ex 19
+"""
+Faça um programa para verificar se um determinado número inteiro e divisível por 3
+ou 5, mas não simultaneamente pelos dois.
+"""
+n = int(input("Entre com o número: \n"))
+if (n%3==0 and n%5==0):
+    print("O número é inválido")
+elif n%3==0:
+   print("O número é divísel por 3")
+elif n%5==0:
+   print("O número é divísel por 5")
+else:
+   print("O número é inválido")
+
+# Ex 20
+"""
+Dado 3 valores valores, A B C, verificar se eles podem ser valores dos lados de um triângulo.
+E se forem, verificar o tipo de triângulo que ele é.
+"""
+
+a = int(input("Entre com o primeiro lado do triângulo: \n"))
+b = int(input("Entre com o segundo lado do triângulo: \n"))
+c = int(input("Entre com o terceiro lado do triângulo: \n"))
+if a<b+c and b<a+c and c<a+b:
+    print("Os valores são válidos para ele ser um triângulo")
+    if a==b==c:
+        print("O triângulo é equilátero")
+    elif a==b or a==c or b==c:
+        print("O triângulo é escaleno")
+    else:
+        print("O triângulo é isóceles")
+else:
+    print("Os valores são inválidos")
+
+# Ex 21
+"""
+Escreva o menu de opções abaixo.Leia a opção do usuário e execute a operação escolhida.
+Escreva uma mensagem de erro se a opção for inválida.
+"""
+
+o = int(input("Escolha uma operação: 1 soma - 2 subtração - 3 multiplpicação - 4 divisão \n"))
+a = int(input("Entre com o primeiro número: \n"))
+b = int(input("Entre com o segundo número \n"))
+if o ==1:
+    r = a + b
+    print("O resultado é:", r)
+elif o==2:
+    if a>b:
+        r = a-b
+        print("O resultado é:", r)
+    else:
+        r = b-a
+        print("O resultado é:", r)
+elif o==3:
+    r = a*b
+    print("O resultado é:", r)
+elif o==4:
+    if a==0 or b==0:
+        print("Os dados são inválidos")
+    else:
+        r = a/b
+        print("O resultado é:", r)
+else:
+    print("Os dados são inválidos")
