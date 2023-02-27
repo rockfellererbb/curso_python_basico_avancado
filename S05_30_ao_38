@@ -1,0 +1,232 @@
+# Ex 30
+"""
+Faça um programa que receba três números e mostre-os em ordem crescente
+"""
+
+import math
+a = int(input("Entre com o primeiro número: "))
+b = int(input("Entre com o segundo número: "))
+c = int(input("Entre com o terceiro número: "))
+print(sorted([a, b, c]))
+
+# Ex 31
+"""
+Faça um programa que receba a altura e o peso de uma pessoa. De acordo com a tabela
+a seguir, verifique e mostre qual classificação ela se encontra
+"""
+
+import math
+h = int(input("Entre com a sua altura em cm: "))
+p = int(input("Entre com o seu peso em kg: "))
+if p<=60:
+    if h<=120:
+        print("Você está no grupo A")
+    elif 120<h<170:
+        print("Você está no grupo B")
+    else:
+        print("Você está no grupo C")
+elif 60<p<=90:
+    if h <= 120:
+        print("Você está no grupo D")
+    elif 120 < h < 170:
+        print("Você está no grupo E")
+    else:
+        print("Você está no grupo F")
+else:
+    if h<=120:
+        print("Você está no grupo G")
+    elif 120<h<170:
+        print("Você está no grupo H")
+    else:
+        print("Você está no grupo I")
+
+# Ex 32
+"""
+Escrever um programa que leia o código do produto escolhido do cardápio de uma lanchonete e a quantidade.
+O programa deve calcular o valor a ser pago por aquele lacnhe. Considere que a cada execução somente será calculada
+um pedido. O cardápio da lanchonete segue o padrão abaixo:
+"""
+
+print("""
+Produto         - Código - preço
+Cachorro quente - 100    - 1.20
+Bauru simples   - 101    - 1.30
+Bauru com ovo   - 102    - 1.50
+Hanburger       - 103    - 1.20
+Cheeseburger    - 104    - 1.70
+Suco            - 105    - 2.20
+Refrigerante    - 106    - 1.00
+""")
+
+produto = ['Cachorro Quente', 'Bauru Simples', 'Bauro com Ovo', 'Hamburguer', 'Chessburguer', 'Suco', 'Refrigerante']
+codigo = [100, 101, 102, 103, 104, 105, 106]
+preço = [1.20, 1.30, 1.50, 1.20, 1.70, 2.20, 1.00]
+c = int(input("Entre com o código do produto: "))
+n = c - 100
+if (c < 100) or (c > 106):
+    print('Código inválido')
+else:
+    quantidade = int(input('Informe a quantidade: '))
+    f = round(quantidade*preço[n],2)
+    print('Foi solicitado',quantidade," - ",produto[n]," a R$",preço[n])
+    print("Valor a pagar: ",f)
+
+# Ex 33
+"""
+Um produto vai sofrer aumento de acordo com a tabela abaixo. Leia o preço antigo, calcule e escreva o preço novo e
+escreva uma mensagem em função do preço novo.
+
+Preço antigo>
+Até 50$         - 5%
+50 a 100$       - 10%
+acima de 100$   - 15%
+
+Preço novo
+até 80$     - Barato
+80 e 120$   - Normal
+120 a 200$  - Caro
+>200$       - Muito caro
+"""
+
+pa = int(input("Entre com o preço antigo: \n"))
+print("O preço antigo é",pa,"R$")
+if pa <=50:
+    pn = round(pa*1.05,2)
+elif 50< pa <100:
+    pn = round(*1.10,2)
+else:
+    pn = round(pa*1.15,2)
+print("O preço atual é",pn,"R$")
+if pn <=80:
+    print("O preço está barato")
+elif 80 < pn <=120:
+    print("O preço está Normal")
+elif 120 < pn <=200:
+    print("O preço está caro")
+else:
+    print("O preço está Muito caro")
+
+# Ex 34
+"""
+Leia a nota de um aluno e escreva seu conceito.Quando ocorrer mais 20 faltas teu conceito caí.
+"""
+conceito = ['A', 'B', 'C', 'D', 'E']
+falta = int(input("Quantas faltas o aluno teve?: "))
+nota = int(input("Entre com a nota do aluno: "))
+if 0 <= nota <=3.9:
+    n = 4
+elif 4 <= nota <= 4.9:
+    n = 3
+elif 5 <= nota <=7.4:
+    n = 2
+elif 7.5 <= nota <=8.9:
+    n = 1
+elif 9<= nota <=10:
+    n = 0
+else:
+    print("A nota é inválida")
+if falta <20:
+    print(" O conceito do aluno é",conceito[n])
+else:
+    if nota >=4:
+        n = n + 1
+        print("O conceito do aluno é",conceito[n])
+    else:
+        print("O conceito do aluno é", conceito[n])
+
+# Ex 35
+"""
+Leia uma data e determina se ela é válida.
+"""
+m = ['janeiro','fevereiro','março','abril','maio','junho','julho','julho','agosto','setembro','outubro','novembro','dezembro']
+dia = int(input("Entre com o dia: \n"))
+if 1<=dia<=31:
+    mes = int(input("Entre com o número do mês: \n"))
+    n = mes - 1
+    if  1 <= mes<=12:
+        ano = int(input("Entre com o ano: \n"))
+        if (mes==2 and dia==31) or (mes==4 and dia==31) or (mes==4 and dia==31) or (mes==6 and dia==31) or (mes==9 and dia==31) or (mes==11 and dia==31):
+            print("Os dados são inválidos")
+        elif (mes==2 and dia==30):
+            print("Os dados são inválidos")
+        elif (mes==2 and dia==29 and ano%4!=0):
+            print("Os dados são inválidos")
+        else:
+            print("O dia escolhido é",dia,"de",m[n],"do ano",ano)
+    else:
+        print("Os dados são inválidos")
+else:
+    print("Os dados são inválidos")
+
+# Ex 36
+"""
+Escreva um programa que dado o valor da venda, imprima a comissão que deverá ser paga ao vendedor. Para calcular a comissão
+use a tabela.
+"""
+venda = int(input("Entre com o valor total da venda no mês: "))
+if venda >=100_000:
+    vf = round(venda*1.16 + 700,2)
+elif 80_000 <= venda < 100_000:
+    vf = round(venda*1.14 + 650,2)
+elif 60_000 <= venda < 80_000:
+    vf = round(venda*1.14 + 600,2)
+elif 40_000 <= venda < 60_000:
+    vf = round(venda*1.14 + 550,2)
+elif 20_000 <= venda < 40_000:
+    vf = round(venda*1.14 + 500,2)
+elif venda <20_000:
+    vf = round(venda*1.14 + 400,2)
+print("O valor total da comissão é",vf,"R$")
+
+# 37. As tarifas de certo parque de estacionamento são as seguintes:
+"""
+1ª e 2ª hora - R$ 1,00 cada
+3ª e 4ª hora - R$ 1,40 cada
+5ª hora e seguintes - R$ 2,00 cada
+O numero de horas é sempre arredondado por excesso, deste modo quem estacionar por 61 minutos pagará por 120 minutos.
+Os momentos de chegada e saída são apresentados na forma de pares inteiros. 12 50 (12:50)
+Leia os momentos de chegada e partida e mostre o preço a ser cobrado.
+Os momentos de chegada e de partida não são superiores a 24 horas.
+Se passar de 24 horas, não é um erro e sim que a partida foi no dia seguinte ao da chegada.
+"""
+
+print('Parque de Estacionamento')
+print('Tabela de preços\n1ª e 2ª hora - R$ 1,00 cada\n3ª e 4ª hora - R$ 1,40 cada\n5ª hora e seguintes - R$ 2,00 cada'
+      '\nCaso exceda a hora será cobrada mais 1 hora')
+hora_c = int(input('Hora de chegada: '))
+minutos_c = int(input('Minuto de chegada: '))
+hora_s = int(input('Hora de saída: '))
+minutos_s = int(input('Minuto de saída: '))
+tempo_permanencia = (hora_s * 60 + minutos_s) - (hora_c * 60 - minutos_c)
+hora_permanencia = (tempo_permanencia / 60)
+print(f'Hora de chegada às: {hora_c} {minutos_c}')
+print(f'Hora de saída às: {hora_s} {minutos_s}')
+print(f'Tempo de permanência: {tempo_permanencia}')
+if tempo_permanencia <= 60 and tempo_permanencia >0:
+    estacionamento = 1
+    print(f'Estacionamento: R$ {estacionamento}')
+elif (tempo_permanencia > 60) and (tempo_permanencia <= 120):
+    estacionamento = 2
+    print(f'Estacionamento: R$ {estacionamento}')
+elif (tempo_permanencia > 120) and (tempo_permanencia <= 180):
+    estacionamento = 2 + 1.4
+    print(f'Estacionamento: R$ {estacionamento}')
+elif (tempo_permanencia > 180) and (tempo_permanencia <= 240):
+    estacionamento = 2 + 2.8
+    print(f'Estacionamento: R$ {estacionamento}')
+elif tempo_permanencia > 240:
+    x = 0
+    if (tempo_permanencia - 240) % 60 == 0:
+        x = (tempo_permanencia - 240) / 60
+        estacionamento = 2 + 2.8 + 2 * x
+        print(x)
+        print(f'Estacionamento: R$ {estacionamento}')
+    else:
+        x = (tempo_permanencia - 240) / 60
+        # Usando int(x) em uma divisão, retorno somente a parte inteira dela
+        y = int(x) + 1
+        estacionamento = 2 + 2.8 + 2 * y
+        print(y)
+        print(f'Estacionamento: R$ {estacionamento}')
+
+#38 = 35
