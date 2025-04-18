@@ -1,0 +1,188 @@
+"""
+1) Faça um programa que possua um valor determinado A que armazene 6 números inteiros. O programa deve executar
+os seguintes passos:
+
+A) Atribuir os valores a esse vetor: 1, 0, 5, -2, -5, -7
+B) Armazene em uma variável inteira (simples) a soma entre os valores das posições A[0], A[1], A[5] do vetor e mostre
+na tela a soma
+C) Modifique o vetor na posição 4, atribuindo a esta posição o valor 100
+D) Mostre na tela cada valor do vetor A, um em cada linha
+"""
+
+lista: list[int] = [1, 0, 5, -2, -5, -7]
+print(lista, '\n')
+soma: int = lista[0]+lista[1]+lista[5]
+print(f'A soma dos valores é {soma}\n')
+lista[4]=100
+for valor in lista:
+    print(valor)
+
+"""
+2) Faça um programa que lê 6 valores inteiros e mostre os valores na tela
+
+"""
+n=1
+lista: list[int]=[]
+while len(lista) < 6 :
+    valor = int(input(f'Entre com o valor número {n}/6: '))
+    n=n+1
+    print(valor)
+    lista.append(valor)
+for valor in lista:
+    print(valor)
+
+"""
+3) Ler um conjunto de valores reais, armazenando-os em vetor e calcular o quadrado das componentes desse vetor, armazen
+ando o resultado em outro vetor. Os conjuntos tem 10 elementos cada. Imprimir todos os conjuntos.
+
+"""
+
+lista: list[float] = []
+quad: list[float] = []
+while len(lista) < 10 :
+    valor = int(input(f'Entre com o valor número {len(lista) + 1}/10: '))
+    print(valor)
+    lista.append(valor)
+    quadrado = valor*valor
+    quad.append(quadrado)
+print(f'Os valores da lista são: \n')
+for valor in lista:
+    print(valor)
+print(f'Os valores dos números ao quadrado são: \n')
+for quadrado in quad:
+    print(quadrado)
+
+"""
+4)  Faça um programa que leia um vetor de 8 posições e, em seguida, leia também dois valores X e Y quaisquer
+correspondentes a duas posições no vetor. Ao final seu programa deverá escrever a soma dos valores encontrados
+nas respectivas posições X e Y.
+
+
+"""
+
+lista: list[int] = []
+while len(lista) < 8 :
+    valor = int(input(f'Entre com o valor número {len(lista) + 1}/8: '))
+    lista.append(valor)
+
+X = int(input(f'Entre com a posição do primeiro vetor: '))
+if X>7:
+    X = int(input(f'Entre com a posição do primeiro vetor: '))
+Y = int(input(f'Entre com a posição do segundo vetor: '))
+if Y > 7:
+    Y = int(input(f'Entre com a posição do segundo vetor: '))
+soma = lista[X] + lista[Y]
+
+print(f'Os números da lista são: ')
+for valor in lista:
+    print(valor)
+print(f'A soma dos vetores é: {soma}')
+
+
+"""
+5)  Leia um vetor de 10 posições. Contar e escrever quantos valores pares ele possui.
+
+"""
+
+#Criação das listas vazias
+lista: list[int] = []
+par: list[int] = []
+
+#Criação da função loop e verificar se é par
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do número {len(lista) +1}/10: '))
+    lista.append(valor)
+    if valor%2==0:
+        par.append(valor)
+print()
+#Impressão dos valores
+print(f'Os números da lista são: {lista} \n')
+print(f'Os números pares da lista são: {par} \n')
+
+"""
+6)  Faça um programa que receba do usuário um vetor com 10 posições. Em seguida deverá ser impresso o maior e o menor
+número dessa lista.
+
+"""
+
+#Criação da lista vazia
+lista : list[int]=[]
+
+#Criação do vetor
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do elemento {len(lista) + 1}/10: '))
+    lista.append(valor)
+
+#Ordenação e selecionar os maiores e menores elementos
+print(f'O maior valor da lista é {(max(lista))}')
+print(f'O menor valor da lista é {min(lista)}')
+
+"""
+7)  Escreve um programa que leia 10 números inteiros e os armazena em um vetor.
+Imprima o vetor, o maior elemento e a posição que ele se encontra.
+"""
+
+#Criação da lista vazia
+lista: list[int] = []
+
+#Criação do loop para 10 elementos
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do elemtno {len(lista) + 1}/10: '))
+    lista.append(valor)
+
+#Impressão do vetor, maior elemento e a posição dele
+print(f'O vetor criado foi {lista}')
+print(f'O maior elemento é {max(lista)}')
+print(f'A posição que esse elemento se encontra é {lista.index(max(lista))}')
+
+"""
+8)  Escreve um programa que leia 6 números inteiros e, em seguida, mostre na telas os números em ordem inversa.
+"""
+
+# Criação da lista vazia
+lista: list[int] = []
+
+# Criação do loop para 8 elementos
+while len(lista) < 8:
+    valor = int(input(f'Entre com o valor do elemento {len(lista) + 1}/8: '))
+    lista.append(valor)
+
+# Impressão da lista invertida
+print(f'A lista invertida é {lista[::-1]}')
+
+"""
+9) Crie um programa que lê 6 valores pares e, em seguida, imprima-os em ordem invertida.
+"""
+
+#Criação da lista vazia:
+lista: list[int] = []
+
+#Criação do loop do vetor e verificação de condição
+while len(lista) <6:
+    valor = int(input(f'Entre com o valor do elemento {len(lista) + 1}/6: '))
+    if valor % 2 != 0:
+        print("O Valor deve ser par, tente novamente")
+    else:
+        lista.append(valor)
+
+#Impressão da lista
+print(f'A lista invertida apenas com números pares é {lista[::-1]}')
+
+"""
+10) Faça um programa pra ler a nota de 15 alunos e armazene num vetor. Calcule a média geral e a imprima.
+"""
+
+#Criação da lista vazia:
+lista: list[int] = []
+
+#Criação do loop vetorial + condições de existência
+while len(lista) < 15:
+    valor = float(input(f'Entre com o valor da nota {len(lista) + 1 }/15: '))
+    if  (valor <0 or valor >10):
+        print('Entre com um valor válido')
+    else:
+        lista.append(valor)
+
+#Cálculo da média e impressão da média
+media = float(sum(lista)/len(lista))
+print(f'A média da turma foi {media:.2f}')
