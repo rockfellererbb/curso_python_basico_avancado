@@ -1,0 +1,315 @@
+"""
+21) Faça um programa que receba do usuário dos vetores, A e B, com 10 números inteiros cada.
+Crie um novo vetor denominado C calculando C = A -B
+"""
+
+#Criação das listas
+lista: int = []
+lista2: int = []
+lista3: int = []
+n=0
+
+#Formação das listas
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do vetor 1 {len(lista)+1}/10: '))
+    lista.append(valor)
+while len(lista2) < 10:
+    valor2 = int(input(f'Entre com o valor do vetor 2 {len(lista2)+1}/10: '))
+    lista2.append(valor2)
+
+#Criação vetor 3
+while n <10:
+    valor3 = lista[n] - lista2[n]
+    n=n+1
+    lista3.append(valor3)
+
+
+print(f'O vetor 1 é {lista}')
+print(f'O vetor 2 é {lista2}')
+print(f'O vetor 3 é {lista3}')
+
+"""
+22) Faça um programa que leia dois vetores de 10 posições e calcule outro vetor nas posições pares os valores dos
+primeiros e nos ímpares os valores dos segundos
+"""
+
+# Criação das listas
+lista: int = []
+lista2: int = []
+lista3: int = []
+n = 0
+
+# Formação das listas 1 e 2:
+for i in range(10):
+    valor = int(input(f'Entre com o valor do vetor A {i + 1}/10: '))
+    lista.append(valor)
+
+print()
+
+for i in range(10):
+    valor2 = int(input(f'Entre com o valor do vetor B {i + 1}/10: '))
+    lista2.append(valor2)
+
+print()
+
+# Formação da lista 3:
+while len(lista3) < 10:
+    if len(lista3) % 2 == 0:
+        lista3.append(lista[n])
+    else:
+        lista3.append(lista2[n])
+    n = n + 1
+
+print(f'O vetor 1 é {lista}')
+print(f'O vetor 2 é {lista2}')
+print(f'O vetor 3 é {lista3}')
+
+"""
+23) Ler dois conjuntos de números reais, armazenando-os em vetores e calcular o produto escalar entre eles.
+Os conjuntos tem 5 elementos cada. Imprimir os dois conjuntos e o produto escalar.
+"""
+
+# Criação das listas
+vetorA: int = []
+vetorB: int = []
+n = 0
+
+# Formação das listas 1 e 2:
+for i in range(5):
+    valor = int(input(f'Entre com o valor do elemento {i + 1}/5: '))
+    vetorA.append(valor)
+
+print()
+
+for i in range(5):
+    valor = int(input(f'Entre com o valor do elemento {i + 1}/5: '))
+    vetorB.append(valor)
+print()
+
+# Formação do produto escalar:
+for i in range(5):
+    prod = vetorA[i] * vetorB[i]
+    n = prod + n
+
+print(f'O vetor 1 é {vetorA}')
+print(f'O vetor 2 é {vetorB}')
+print(f'O vetor 3 é {n}')
+
+"""
+24) Faça um programa que leia dez conjuntos de dois valores, o primeiro representando o número do aluno
+e o segundo representando sua altura em metros. Encontro o aluno mais baixo e o mais alto. Mostre o número do aluno
+mais baixo e do mais alto, juntamento com suas alturas.
+"""
+
+##PULEI
+
+
+"""
+25) Faça um programa que preencha um vetor de tamanha 100 com os 100 primeiros números naturais que não são multiplos
+de 7 ou que terminam em 7.
+
+"""
+lista = []
+n = 0
+while len(lista) < 100:
+    if (n % 7 != 0) and (n % 10 != 7):
+        lista.append(n)
+    n = n+1
+print(lista)
+
+"""
+26) Faça um programa que calcule o desvio padrão de um vetor V contendo n=10 números,
+onde m é a média do vetor
+
+"""
+
+#Feito com ajuda do CHATGPT, precisa de ajustes
+
+lista = []
+b = 0
+while len(lista) < 10:
+    num = int(input(f'Entre com o valor {len(lista) + 1}/10: '))
+    lista.append(num)
+
+media = float(sum(lista)/10)
+
+
+for n in lista:
+    soma = float(n - media)**2
+    b = float(b + soma)
+
+# Cálculo do desvio padrão (amostral)
+
+
+desvio = (b / (len(lista) - 1)) ** 0.5
+
+# Exibição do resultado
+print(f'O desvio padrão é {desvio:.2f}')
+
+
+
+
+
+
+
+print(lista)
+print(primo)
+
+
+
+
+naoprimo = []
+primo = []
+a = int(input(f'Entre com o valor do número: '))
+d = 2
+
+while d < a:
+    e = a % d
+    if e !=0:
+        d = d+1
+    else:
+        print(f'O número {a} não é primo')
+        break
+    if d == (a - 1) and (e != 0):
+        print(f'O número {a} é primo')
+
+"""
+27) Leia 10 números inteiros e armazene em um vetor. Em seguida escreva os elementos que são primos
+e suas respectivas posições no vetor
+"""
+lista = []
+primo = []
+
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do vetor {len(lista) + 1} /10: '))
+    lista.append(valor)
+
+for n in lista:
+    print(n)
+    b = 2
+    while b < n:
+        e = n % b
+        if e != 0:
+            b = b + 1
+        else:
+            print(f'O número {n} não é primo')
+            break
+        if b == (n - 1) and (e != 0):
+            print(f'O número {n} é primo')
+            primo.append(n)
+
+print(lista)
+print(primo.index(all)
+
+
+
+
+# Criação das listas
+lista = []
+primos = []
+
+# Loop para preencher a lista com 10 números inteiros
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do vetor {len(lista) + 1}/10: '))
+    lista.append(valor)
+
+# Verificação de números primos e suas posições
+for i, n in enumerate(lista):
+    if n > 1:  # Números menores ou iguais a 1 não são primos
+        eh_primo = True
+        for b in range(2, int(n**0.5) + 1):
+            if n % b == 0:
+                eh_primo = False
+                break
+        if eh_primo:
+            primos.append((n, i))
+            print(f'O número {n} na posição {i} é primo.')
+        else:
+            print(f'O número {n} na posição {i} não é primo.')
+    else:
+        print(f'O número {n} na posição {i} não é primo.')
+
+# Impressão dos resultados finais
+print(f'\nLista de números: {lista}')
+print(f'Números primos e suas posições: {primos}')
+
+#Realizado com ajuda do CHATGPT
+
+
+"""
+28) Leia 10 números inteiros e armazene em um vetor V. Crie dos noves vetores
+V1 e v2. Copie os valores ímpares de V para v1 e os pares para v2; Note que cada um
+dos vetores v1 e v2 tem no máximo 10 elementos, mas nem todos os elementos são utilizados;
+No final escreva os elemtnos utilizados de v1 e v2
+
+"""
+
+v = []
+v1 = []
+v2 = []
+
+while len(v) <10:
+    valor = int(input(f'Entre com o elemento {len(v) +1 }/10: '))
+    v.append(valor)
+    if valor % 2 == 0:
+        v2.append(valor)
+    else:
+        v1.append(valor)
+
+print(f'\nA lista é a seguinte: {v}')
+print(f'Os vetores ímpares são: {v1}')
+print(f'Os vetores pares são: {v2}')
+
+
+
+"""
+29) Faça um programa que receba 6 números inteiros e mostre:
+
+Os números pares digitados
+A soma dos números pares
+Os núemros ímpares
+A soma dos números ímpares
+
+"""
+
+v = []
+v1 = []
+v2 = []
+
+while len(v) <6:
+    valor = int(input(f'Entre com o elemento {len(v) +1 }/6: '))
+    v.append(valor)
+    if valor % 2 == 0:
+        v2.append(valor)
+    else:
+        v1.append(valor)
+
+print(f'\nA lista é a seguinte: {v}')
+print(f'Os vetores ímpares são: {v1}, a soma deles são {sum(v1)}')
+print(f'Os vetores pares são: {v2}, a soma deles são {sum(v2)}')
+
+"""
+30) Faça um programa que leia dois vetores de 10 elementos. Crie um vetor que seja
+a intersecção entre os 2 vetores anteriores, ou seja, que contém apenas os números que
+estão em ambos os vetores. Não deve conter números repetidos.
+
+"""
+
+v = []
+v1 = []
+v2 = []
+
+while len(v1) <10:
+    valor = int(input(f'Entre com o elemento {len(v1) +1 }/10: '))
+    v1.append(valor)
+
+while len(v2) <10:
+    valor = int(input(f'\Entre com o elemento {len(v2) +1 }/10: '))
+    v2.append(valor)
+
+for n in v1:
+    if n in v2 and n not in v:
+        v.append(n)
+
+print(f'\nO Vetor intersecção é: {v}')
+
