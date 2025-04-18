@@ -1,0 +1,253 @@
+"""
+11) Faça um programa que preencha um vetor com 10 números reais, calcule e mostre  a quantidade de números negativos
+e a soma dos números postivos desse vetor
+"""
+
+lista: float = []
+negativo = 0
+positivo = 0
+while len(lista) < 10:
+    valor = float(input(f'Entre com um valor real {len(lista) + 1}/10: '))
+    if valor <0:
+        negativo = negativo + 1
+    else:
+        positivo = positivo + valor
+    lista.append(valor)
+print(f'A quantidade de números negativos é: {negativo}')
+print(f'A soma dos números positivos é: {positivo}')
+
+"""
+12) Fazer um programa pra ler 5 valores e, em seguida, mostrar a lista com todos os valores, juntamente com o maior,
+menor e a média deles.
+"""
+
+#Criação da lista vazia
+lista = []
+
+#Criação do loop para criar a lista
+while len(lista) < 5:
+    valor= int(input(f'Entre com o valor do elemento {len(lista) + 1}/5: '))
+    lista.append(valor)
+
+#Cálculo da média e impressão dos dados
+media = float(sum(lista)/len(lista))
+print(f'A lista contém os elementos: {lista}')
+print(f'A média da lista é {round(media, 3)} e o maior elemento é {max(lista)} e o menor elemento é {min(lista)}')
+
+"""
+13) Fazer um programa pra ler 5 valores e, em seguida, mostrar a lista com todos os valores, juntamente com o maior,
+menor e a média deles.
+"""
+
+#Criação da lista vazia
+lista = []
+
+#Criação do loop para criar a lista
+while len(lista) < 5:
+    valor= int(input(f'Entre com o valor do elemento {len(lista) + 1}/5: '))
+    lista.append(valor)
+
+#Cálculo da média e impressão dos dados
+media = float(sum(lista)/len(lista))
+print(f'A lista contém os elementos: {lista}')
+print(f'A média da lista é {round(media, 3)} e o maior elemento é {max(lista)} e o menor elemento é {min(lista)}')
+
+"""
+14) Faça um programa que leia um vetor de 10 posições e verifique se existem valores iguais e os escreva na tela.
+"""
+
+lista: int = []
+repetidos: int = []
+
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor {len(lista) + 1}/10: '))
+    lista.append(valor)
+    if lista.count(valor) > 1:
+        repetidos.append(valor)
+
+unicos1 = set(lista) - set(repetidos)
+
+print(f'Os números da lista são: {lista} \n'
+      f'Os números repetidos são: {repetidos} \n'
+      f'Os números únicos são: {unicos1}')
+
+"""
+14) Faça um programa que leia um vetor de 10 posições e verifique se existem valores iguais e os escreva na tela.
+"""
+#Correção via ChatGPT
+# Inicializa as listas
+lista = []
+repetidos = set()  # Usamos um conjunto para garantir que não haja duplicatas
+
+# Loop para ler 10 valores
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor {len(lista) + 1}/10: '))
+    lista.append(valor)
+    if lista.count(valor) > 1:
+        repetidos.add(valor)  # Adicionamos ao conjunto para evitar duplicatas
+
+# Calcula os números únicos
+unicos = set(lista) - repetidos
+
+# Converte o conjunto repetidos para uma lista para exibição
+repetidos = list(repetidos)
+
+# Exibe os resultados
+print(f'Os números da lista são: {lista}')
+print(f'Os números repetidos são: {repetidos}')
+print(f'Os números únicos são: {unicos}')
+
+"""
+15) Leia um vetor com 20 números inteiros. Escreva os elementos do vetor eliminando elementos repetidos.
+"""
+
+#Criando a lista vazia
+
+lista: list = []
+
+while len(lista) <20:
+    valor = int(input(f'Entre com o valor {len(lista) +1} /20: '))
+    lista.append(valor)
+conjunto = set(lista)
+print(f'A lista com os 20 números inteiros sem repetições é {conjunto}')
+
+"""
+16) Faça um programa que leia um vetor de 5 posições e um código inteiro. Se o código for 0, finalize o programa.
+Se for 1, mostre o vetor na ordem direta; se for 2, mostre o vetor na ordem inversa. Caso o código for diferente de 1
+ou 2, escreva uma mensagem informando que o código é inválido.
+"""
+
+#Criando a lista vazia
+lista = []
+
+#Loop para criar o vetor
+while len(lista) <5:
+    valor = int(input(f'Entre com o valor do elemento {len(lista) +1}/5: '))
+    lista.append(valor)
+
+#Código e verificação de condições
+codigo = int(input(f'Entre com o código: '))
+while codigo not in (0, 1, 2):
+    print("Código inválido, digite novamente: ")
+    codigo = int(input('Entre com o código (0, 1 ou 2): '))
+if codigo == 0:
+    print('Programa encerrado')
+if codigo == 1:
+    print(lista)
+if codigo == 2:
+    print(lista[::-1])
+
+"""
+17) Leia um vetor de 10 posições e atribua valor 0 para todos os elemtnos que possuírem valores negativos
+"""
+
+# Criando a lista vazia
+lista: int = []
+
+# Loop para criar o vetor
+while len(lista) < 10:
+    valor = int(input(f'Entre com o valor do elemento {len(lista) + 1}/10: '))
+    if valor < 0:
+        valor = 0
+    lista.append(valor)
+
+# Impressão da lista
+print(lista)
+
+"""
+18) Faça um programa que leia um vetor de 10 números.
+Leia um número x e conte os múltiplos desse número inteiro no vetor e mostre-os na tela.
+"""
+
+# Criando a lista vazia
+lista: float = []
+mpx: float = []
+n = 0
+
+# Loop para criar o vetor
+while len(lista) < 10:
+    valor = float(input(f'Entre com o valor do elemento {len(lista) + 1}/10: '))
+    lista.append(valor)
+multiplo = int(input(f'Entre com o valor do número a ser o múltiplo: '))
+
+while n < 9:
+    if lista[n] >= multiplo:
+        divisao = lista[n] % multiplo
+        if divisao == 0:
+            mpx.append(lista[n])
+    n = n + 1
+
+# Impressão da lista
+print(lista)
+print(mpx)
+
+#ChatGPT
+
+# Criação da lista vazia para armazenar os valores
+numeros = []
+multiplos_de_x = []
+
+# Loop para coletar 10 valores
+while len(numeros) < 10:
+    try:
+        valor = int(input(f'Entre com o valor do elemento {len(numeros) + 1}/10: '))
+        numeros.append(valor)
+    except ValueError:
+        print("Por favor, insira um número inteiro válido.")
+
+# Leitura do valor de x
+while True:
+    try:
+        x = int(input('Entre com o valor de x para verificar os múltiplos: '))
+        break
+    except ValueError:
+        print("Por favor, insira um número inteiro válido.")
+
+# Verificação dos múltiplos de x na lista
+for abc in numeros:
+    if abc % x == 0:
+        multiplos_de_x.append(abc)
+
+# Impressão dos resultados
+print(f'Lista de números: {numeros}')
+print(f'Múltiplos de {x} na lista: {multiplos_de_x}')
+
+"""
+19) Faça um vetor de tamanho 50 preenchido com o seguinte valor: (i + 5*i)%(i +1),
+sendo i a posição do elemento do vetor.
+Em seguida imprima o vetor na tela.
+"""
+
+lista: float = []
+lista2: float = []
+n = 0
+while len(lista) < 50:
+    lista.append(n)
+    valor = (lista[n] + 5 * lista[n])%(lista[n] + 1)
+    lista2.append(valor)
+    n = n+1
+print(f'A lista completa é {lista2}')
+
+"""
+20) Escreva um programa que leia valores inteiros no intervalo [0, 50] e os armazena em um vetor com 10 posições.
+Preencha um segundo vetor apenas com os números ímpares do primeiro vetor. Imprima os 2 vetores.
+"""
+
+#Criação das listas
+lista: int = []
+lista2: int = []
+
+#Formação das listas
+while len(lista) < 10:
+    valor = int(input(f'Entre com um valor entre 0 e 50 [{len(lista)+1}/10]: '))
+    while valor <0 or valor>50:
+        valor = int(input(f'Entre com um valor entre 0 e 50 [{len(lista) + 1}/10]: '))
+    lista.append(valor)
+
+#Verificação dos números ímpares
+for numero in lista:
+    if (numero % 2 ) != 0:
+        lista2.append(numero)
+
+print(f'A lista completa é {lista}')
+print(f'A lista com os números ímpares são: {lista2}')
