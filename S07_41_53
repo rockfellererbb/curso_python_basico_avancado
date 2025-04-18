@@ -1,0 +1,1222 @@
+"""
+41)
+
+Declare uma matriz 5x5. Preencha com 1 a matriz principal e com 0 as demais.
+
+"""
+
+matriz = []
+
+
+# Lendo a matriz 5x5
+for i in range(5):
+    linha = []
+    for j in range(5):
+        if j == i:
+            valor = 1
+        else:
+            valor = 0
+        linha.append(valor)
+    matriz.append(linha)
+
+for linha in matriz:
+    print(linha)
+
+
+"""
+43)
+
+Faça um programa que preencha uma matriz 4x4 com o produto do valor da linha e da coluna de cada elemento.
+"""
+
+matriz = []
+
+for i in range(4):
+    linha = []
+    for j in range(4):
+        valor = (j+1)*(i+1)
+        linha.append(valor)
+    matriz.append(linha)
+
+for linha in matriz:
+    print(linha)
+
+"""
+44)
+
+Leia uma matriz 4x4, imprima a matriz e retorne a localização do maior valor
+"""
+
+matriz = []
+
+for i in range(4):
+    linha = []
+    for j in range(4):
+        valor = int(input(f'Entre com a posição {(i) + 1}/{j+1}: '))
+        linha.append(valor)
+    matriz.append(linha)
+print()
+for linha in matriz:
+    print(linha)
+
+
+print(f'O valor máximo da matriz é: {max(linha)} e se encontra na posição ')
+
+# Inicializando as variáveis para armazenar o maior valor e sua posição
+maior_valor = matriz[0][0]
+posicao_linha = 0
+posicao_coluna = 0
+
+# Busca pelo maior valor e sua posição
+for i in range(4):
+    for j in range(4):
+        if matriz[i][j] > maior_valor:
+            maior_valor = matriz[i][j]
+            posicao_linha = i
+            posicao_coluna = j
+
+# Exibindo o maior valor e sua posição
+print(f'\nO maior valor da matriz é: {maior_valor}')
+print(f'Ele está localizado na linha {posicao_linha + 1}, coluna {posicao_coluna + 1}')
+
+#Resolvido com ajuda do ChatGPT
+"""
+
+45)
+
+Leia uma matriz 5x5. Leia também um valor X. O programa deverá fazer uma busca desse valor na matriz e, ao final,
+escrever a localização (linha e coluna) ou uma mensagem de "não encontrado".
+"""
+
+x = int(input(f'Digite o valor x: '))
+
+matriz = []
+
+for i in range(5):
+    linha = []
+    for j in range(5):
+        valor = int(input(f'Entre com o valor da matriz {i+1}/{j+1}: '))
+        linha.append(valor)
+    matriz.append(linha)
+
+# Inicializando uma variável para controlar se encontramos o valor
+encontrado = False
+
+# Buscando o valor X na matriz
+for i in range(5):
+    for j in range(5):
+        if matriz[i][j] == x:
+            print(f'O número {x} foi encontrado na posição ({i+1}, {j+1})')
+            encontrado = True
+
+# Se o valor não foi encontrado, mostrar a mensagem correspondente
+if not encontrado:
+    print(f'O número {x} não foi encontrado na matriz.')
+
+#Feito com ajuda do Chat GPT
+
+
+for i in range(i):
+    print(matriz[i])
+
+
+"""
+46)
+
+leia duas matrizes 4x4 e escreva uma terceira com os maiores valores de cada posição das
+matriz lidas
+
+"""
+
+
+matriz1 = []
+matriz2 = []
+matriz3 = []
+
+for i in range(4):
+    linha = []
+    for j in range(4):
+        valor = int(input(f'Entre com o valor da matriz 1 {i+1}/{j+1}: '))
+        linha.append(valor)
+    matriz1.append(linha)
+
+print('=-' * 60)
+
+for i in range(4):
+    linha = []
+    for j in range(4):
+        valor = int(input(f'Entre com o valor da matriz 2 {i+1}/{j+1}: '))
+        linha.append(valor)
+    matriz2.append(linha)
+
+print('=-' * 60)
+
+print(f'Matriz 1')
+for linha in matriz1:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+print('=-' * 60)
+
+print(f'Matriz 2')
+for linha in matriz2:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+
+for a in range(0,4):
+    linha = []
+    for b in range(0, 4):
+        if matriz1[a][b] > matriz2[a][b]:
+            linha.append(matriz1[a][b])
+        else:
+            linha.append(matriz2[a][b])
+    matriz3.append(linha)
+print('=-' * 60)
+
+print(f'A matriz 3 com os valores dos maiores elementos é: ')
+for linha in matriz3:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+
+"""
+47)
+
+Gerar e imprimir uma matriz de tamanho 10x10, onde seus elementos são formados da seguinte forma:
+
+A[i][j] = 2i +7j -2 se i<j
+A[i][j] = 3i^2 -1 se i = j
+A[i][j] = 4i^3 -5j^2 +1 se i > j
+"""
+
+
+matriz = []
+
+for i in range(1,11):
+    linha = []
+    for j in range(1,11):
+        if i < j:
+            valor = 2*i +7*j -2
+        elif i == j:
+            valor = 3*i**2 -1
+        elif i > j:
+            valor = 4*i**3 -5*j**2 +1
+        linha.append(valor)
+    matriz.append(linha)
+
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+"""
+48)
+
+Leia uma matriz 3x3. Calcule a soma dos elementos que estão acima da diagonal principal
+
+
+"""
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f' Entre com o valor do elemento {i + 1}/{j + 1}: '))
+        linha.append(valor)
+    matriz.append(linha)
+
+print('A Matriz é: ')
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+for a in range(3):
+    for b in range(3):
+        x = matriz[0][1] + matriz[0][2] + matriz[1][2]
+
+print(f'A soma dos números acima da matriz é {x}')
+
+
+"""
+49)
+
+Leia uma matriz 3x3. Calcule a soma dos elementos que estão abaixo da diagonal principal
+
+
+"""
+
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f' Entre com o valor do elemento {i+1}/{j+1}: '))
+        linha.append(valor)
+    matriz.append(linha)
+
+print('A Matriz é: ')
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+for a in range(3):
+    for b in range(3):
+        x = matriz[1][0] + matriz[2][0] + matriz[2][1]
+
+print(f'A soma dos números acima da matriz é {x}')
+
+
+"""
+50)
+
+Leia uma matriz 3x3. Calcule a soma dos elementos que estão na diagonal principal
+
+
+"""
+
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f' Entre com o valor do elemento {i+1}/{j+1}: '))
+        linha.append(valor)
+    matriz.append(linha)
+
+print('A Matriz é: ')
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+soma = 0
+
+for a in range(3):
+    for b in range(3):
+        if a == b:
+            soma += matriz[a][b]
+
+print(f'A soma dos números acima da matriz é {soma}')
+
+
+"""
+51)
+
+Leia uma matriz 3x3. Calcule a soma dos elementos que estão na diagonal secundária
+
+
+"""
+
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f' Entre com o valor do elemento {i+1}/{j+1}: '))
+        linha.append(valor)
+    matriz.append(linha)
+
+print('A Matriz é: ')
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+principal = 0
+secundaria = 0
+
+for a in range(3):
+    for b in range(3):
+        if a == b:
+            principal += matriz[a][b]
+        else:
+            secundaria += matriz[a][b]
+
+print(f'A soma dos números acima da matriz é {secundaria}')
+
+
+"""
+52)
+
+Leia uma matriz 3x3. Calcule e imprima sua transposta
+
+
+"""
+
+
+matriz = []
+transposta = []
+coluna1 = []
+coluna2 = []
+coluna3 = []
+
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f' Entre com o valor do elemento {i+1}/{j+1}: '))
+        linha.append(valor)
+        if j == 0:
+            coluna1.append(valor)
+        if j == 1:
+            coluna2.append(valor)
+        if j == 2:
+            coluna3.append(valor)
+    matriz.append(linha)
+
+transposta.append(coluna1)
+transposta.append(coluna2)
+transposta.append(coluna3)
+
+print('A Matriz é: ')
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+print('  ')
+
+
+print('A Matriz é Transposta é: ')
+for coluna1 in transposta:
+    for a in coluna1:
+        print(f'[{a:^5}]', end='')
+    print(" ")
+
+
+
+
+
+
+"""
+53)
+
+Gere uma matriz 4x4 com valores no intervalo [1, 20]. Escreva um programa que transforme a matriz gerada
+numa matriz triangular inferior, ou seja, atribuindo zero a todos os elementos acima da diagonal principal.
+
+Imprima a matriz original e a matriz transformada
+
+
+"""
+
+
+matriz = []
+transformada = []
+
+for i in range(4):
+    linha = []
+    linha2 = []
+    for j in range(4):
+        valor = int(input(f' Entre com o valor do elemento {i+1}/{j+1}: '))
+        while valor > 20 or valor < 1:
+            valor = int(input(f' Entre com o valor do elemento {i + 1}/{j + 1}: '))
+        linha.append(valor)
+        if j > i:
+            linha2.append(0)
+        else:
+            linha2.append(valor)
+    matriz.append(linha)
+    transformada.append(linha2)
+
+
+print('A Matriz é: ')
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+print('  ')
+
+x = 0
+
+print('A Matriz é Transformada é: ')
+for linha2 in transformada:
+    for e in linha2:
+        print(f'[{e:^5}]', end='')
+    print(" ")
+
+
+"""
+54)
+
+Faça um programa para gerar automaticamente números entre 0 e 99 de uma cartela de
+bingo. Sabendo que cada cartela deverá conter 5 linhas de 5 números, gere estes dados
+de modo a não ter números repetidos dentro das cartelas. O programa deve exibir na tela
+a cartela gerada.
+
+
+
+
+"""
+import random
+
+# Inicializa a cartela de bingo
+cartela = []
+numeros_sorteados = set()  # Usamos um conjunto para garantir que os números não se repitam
+
+# Preenche a cartela com números aleatórios sem repetição
+for i in range(5):
+    linha = []
+    for j in range(5):
+        while True:
+            valor = random.randint(0, 99)  # Gera um número entre 0 e 99
+            if valor not in numeros_sorteados:  # Verifica se o número já foi sorteado
+                numeros_sorteados.add(valor)  # Adiciona ao conjunto de números sorteados
+                linha.append(valor)
+                break
+    cartela.append(linha)
+
+# Exibe a cartela gerada
+print('Cartela de Bingo:')
+for linha in cartela:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+
+ #Feito com ajuda do ChatGPT
+
+
+
+"""
+55)
+
+Leia uma matriz 5x10 que se refere a respostas de 10 questões de múltiplas escolhas referente a 5 alunos.
+Leia também um vetor de 10 posições contendo o gabarito de respostas que podem ser a, b, c ou d.
+Seu programa deverá comparar as respostas de cada candidato com o gabarito e emitir um vetor determinado resultado.
+contendo a pontuação correspondente de cada aluno.
+
+
+"""
+
+matriz = []
+gabarito = ['a', 'b', 'c', 'd', 'b', 'c', 'd', 'a', 'c', 'b']
+valores_permitidos = ['a','b','c','d']
+pontuacoes  = []
+pontuacao = 0
+
+for j in range(5):
+    print(' ')
+    aluno = input(f'Entre com o nome do aluno {j+1}: ')
+    respostas = []
+    print(' ')
+
+
+    for i in range(10):
+        valor = input(f'Entre com as respostas do aluno: ')
+        while valor not in valores_permitidos:
+            print("Coloque um valor válido")
+            valor = input(f'Entre com as respostas do aluno: ')
+        respostas.append(valor)
+    matriz.append([aluno] + respostas)
+
+
+
+
+for linha in matriz:
+    aluno = linha[0]  # Nome do aluno
+    respostas = linha[1:]  # Pegamos apenas as respostas (excluindo o nome)
+
+    pontuacao = sum(1 for i in range(3) if respostas[i] == gabarito[i])  # Compara respostas com gabarito
+    pontuacoes.append((aluno, pontuacao))  # Armazena a pontuação do aluno
+
+
+print("\nResultados:")
+for aluno, pontuacao in pontuacoes:
+    print(f"{aluno}: {pontuacao} pontos")
+
+#Resolvido com ajuda de IA
+
+
+
+
+
+print("\nResultados:")
+for aluno, pontuacao in pontuacoes:
+    print(f"{aluno}: {pontuacao} pontos")
+
+
+
+"""
+BIZU PARA MATRIS
+
+Quando quiser imprimir certos elementos, numa forma mais fácil de lidar com elementes matricial, 
+pode-se utilizar este modo, onde você define quais elementos serão impressos
+
+
+"""
+pessoas = \
+    [
+    ["João", 25, 34, 54],
+    ["Maria", 30, 32, 23],
+    ["Pedro", 22, 19, 18]
+]
+
+
+
+#aqui imprimi o nome e os 2 últimos números
+for linha in pessoas:
+    nome = linha[0]
+    numeros = linha[2:]
+    print(f" {nome} e {numeros}")
+
+#aqui imprimi o nome e os 3 últimos números
+for linha in pessoas:
+    nome = linha[0]
+    numeros = linha[1:]
+    print(f" {nome} e {numeros}")
+
+"""
+Exercício: Notas dos Alunos
+CHAT-GPT
+
+Você tem uma lista contendo os nomes de alunos e três notas de cada um. Seu objetivo é:
+
+Separar os nomes dos alunos das notas.
+Calcular a média de cada aluno.
+Exibir o nome do aluno junto com sua média.
+
+
+"""
+alunos = [
+    ["João", 7, 8, 9],
+    ["Maria", 6, 5, 8],
+    ["Pedro", 9, 9, 10]
+]
+
+
+for linha in alunos:
+    nome = linha[0]
+    notas = linha[2:]
+
+    for i in notas:
+        media = sum(notas)/len(notas)
+
+    print(f"O aluno {nome} teve a média {media:.1f}")
+
+
+
+"""
+    46) Faça um programa para corrigir uma prova com 10 questões de múltipla escolha( a até e)
+    em uma turma com 3 alunos. Cada questão vale 1 ponto. Leia o gabarito e para cada aluno leia
+    sua matrícula (número inteiros) e suas respostas. Calcule e escreva:
+
+    Para cada aluno, escreva sua matrícula, suas respostas e sua nota.
+    O percentual de aprovação, assumindo a média 7.0
+
+"""
+
+
+gabarito = ['a','b','c','d','e','d','c','b','a','b']
+notas_validas = ['a','b','c','d','e']
+alunos = []
+aprovacoes = []
+
+
+for i in range(3):
+    aluno = input("Entre com o nome do aluno: ")
+    matricula = int(input("Entre com o número de matrícula: "))
+
+
+    pontuacoes = []
+    notas = []
+    aprovado = True
+    pontuacao = 0
+    for j in range(10):
+        nota = input(f"Entre com a resposta da questão {j+1} do aluno {aluno}: ")
+        while nota not in notas_validas:
+            print("Digite uma resposta válida (a, b, c, d ou e).")
+            nota = input(f"Entre com a resposta da questão {j + 1} do aluno {aluno}: ")
+        notas.append(nota)
+        if nota==gabarito[j]:
+            pontuacao = pontuacao+1
+    pontuacoes.append(pontuacao)
+    if pontuacao < 7:
+        aprovado = False
+        aprovado = "Reprovado"
+    else:
+        aprovado = "Aprovado"
+    aprovacoes.append(aprovado)
+    print()
+
+    alunos.append([aluno,matricula,notas,pontuacoes,aprovado])
+
+
+
+
+
+
+for linha in alunos:
+    print(f'O aluno {linha[0]}, cuja matrícula é {linha[1]} tirou a pontuação{linha[3]} sendo então {linha[4]}')
+
+
+
+
+"""
+47) Faça um programa que permita entrar  com uma matriz 3x3 de números inteiros. Em seguida, gere um array unidimensional
+pela soma dos números de cada coluna da matriz e mostre na tela esse array,
+por exemplo, a matriz:
+
+5 -8  10
+1  2  15
+25 10 7
+
+Vai gerar um vetor, onde cada posição é a soma das colunas da matriz. A primeira posição será 5+1+25
+e assim por diante
+
+31 4 3
+
+"""
+
+
+matriz = []
+vetor1 = []
+vetor2= []
+vetor3= []
+
+for i in range (3):
+    linha = []
+    for j in range (3):
+        x = int(input(f'Entre com o elemento {i+1}/{j+1}: '))
+        linha.append(x)
+        if (j==0):
+            vetor1.append(x)
+        elif (j==1):
+            vetor2.append(x)
+        else:
+            vetor3.append(x)
+    matriz.append(linha)
+
+
+
+print(vetor1, vetor2, vetor3)
+
+for linha in matriz:
+    for e in linha:
+        print(f' [{e:^5}]', end='')
+    print()
+
+
+"""
+48) Faça um programa que leia uma matriz de 5 linhas e 4 colunas contendo as seguintes
+informações sobre alunos de uma disciplina, sendo todas as informações do tipo inteiro:
+
+Primeira Coluna - número de matrícula (use um inteiro)
+Segunda coluna - média das provas
+Terceira coluna - médias dos trabalhos
+Quarta coluna - nota final
+
+Elabore um programa que:
+
+Leia as 3 primeiras informações de cada aluno
+Calcule a nota final como sendo a soma das médias da prova e dos trabalhos
+imprima a matrícula do aluno que obteve a maior nota final (assuma que só exista uma nota maior)
+imprima a média aritmética das notas finais
+
+"""
+
+
+matriz = []
+
+
+for i in range(3):
+    linha = []
+    maior = []
+    matricula = int(input(f'Entre com o número da matrícula: '))
+    mediaprova = int(input(f'Entre com a média das provas: '))
+    meidatrabalho = int(input(f'Entre com a média dos trabalhos: '))
+    notafinal = mediaprova + meidatrabalho
+    linha.extend([matricula,mediaprova,meidatrabalho,notafinal])
+    print()
+    matriz.append(linha)
+
+soma_notas = 0
+matricula_maior = 0
+maior_nota = 0
+
+for aluno in matriz:
+    nota_atual = aluno[3]
+    soma_notas += nota_atual
+
+    if nota_atual > maior_nota:
+        maior_nota = nota_atual
+        matricula_maior = aluno[0]
+
+# Cálculo da média
+media_notas = soma_notas / len(matriz)
+
+# Resultados
+print(f"Matrícula do aluno com maior nota final: {matricula_maior}, com a nota {maior_nota}")
+print(f"Média aritmética das notas finais: {media_notas:.2f}")
+
+
+"""
+49)  Faça um programa que leia uma matriz 3x6 com valores reais
+
+a)Imprima a soma de todos os elementos das colunas ímpares
+b)Imprima a média aritmética dos elementos da segunda e quarta coluna
+c)Substitua os valores da sexta coluna pela soma dos valores da coluna 1 e 2
+d)Imprima a matriz modificada
+
+"""
+
+matriz = []
+
+for i in range(3):
+    linha = []
+    for j in range(6):
+        elemento = int(input(f'Entre com o elemento {i+1}/{j+1}: '))
+        linha.append(elemento)
+    matriz.append(linha)
+
+print()
+
+
+print("A matriz original: ")
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+soma_impares = []
+for linha in matriz:
+    for b in range(0, len(linha), 2):
+        soma_impares.append(linha[b])
+
+
+vetor_pares = []
+for linha in matriz:
+    for x in range(1, 4, 2):
+        vetor_pares.append(linha[x])
+media_pares = sum(vetor_pares)/len(vetor_pares)
+
+troca = 0
+vetor_troca = []
+for linha in matriz:
+    troca = 0
+    for y in range(0,2,1):
+        troca += linha[y]
+    vetor_troca.append(troca)
+
+a = 0
+for linha in matriz:
+    print(linha[len(linha)-1])
+    linha[len(linha) - 1] = vetor_troca[a]
+    print("vetor troca")
+    print(vetor_troca[a])
+    print('pós troca: ')
+    print(linha[len(linha)-1])
+    print('fim')
+    a =a+1
+print()
+
+
+print("A matriz trocada: ")
+for linha in matriz:
+    for e in linha:
+        print(f'[{e:^5}]', end='')
+    print()
+
+print(f'O valor da soma das colunas ímpares é {sum(soma_impares)}')
+print(f'A média aritmética das colunas 2 e 4 é: {media_pares:.2f}')
+
+
+"""
+50)  Faça um programa que leia duas matriz 2x2. Ofereça ao usuário um menu com as opções:
+
+
+
+a)Somas as duas matrizes
+b)Subtrair a MatA - MatB
+c)Adicionar uma constante a ambas matrizes
+d)Imprimir as matrizes
+
+Nas duas primeiras opções uma terceira matriz 2x2 deve ser criada. Na terceira opção
+o valor da constante deve ser lido e o resultado da adição da constante deve ser armazenado
+na própria matriz.
+
+"""
+
+matrizA = []
+matrizB = []
+matrizC = []
+linha1 = []
+linha2 = []
+
+print("Preencha a Matriz A")
+for i in range(2):
+    linha1 = []
+    for j in range(2):
+        elemento = int(input(f'Entre com o elemento {i+1}/{j+1}: '))
+        linha1.append(elemento)
+    matrizA.append(linha1)
+
+print()
+
+print("Preencha a Matriz B")
+for i in range(2):
+    linha2 = []
+    for j in range(2):
+        elemento = int(input(f'Entre com o elemento {i + 1}/{j + 1}: '))
+        linha2.append(elemento)
+    matrizB.append(linha2)
+
+print()
+
+print("Escolha o menu:\n 1 - Somar as duas matrizes\n 2 - Subtrair a MatA - MatB\n 3 - Adicionar uma constante a ambas matrizes \n"
+      " 4 - Imprimir as matrizes\n...")
+case = int(input())
+
+if case == 1:
+
+    for a in range(2):
+        linha3 = []
+        for b in range(2):
+            c = matrizA[a][b] + matrizB[a][b]
+            linha3.append(c)
+        matrizC.append(linha3)
+
+    for linha in matrizC:
+        for e in linha:
+            print(f'[ {e:^5} ]', end='')
+        print()
+
+elif case == 2 :
+    for a in range(2):
+        linha3 = []
+        for b in range(2):
+            c = matrizA[a][b] - matrizB[a][b]
+            linha3.append(c)
+        matrizC.append(linha3)
+    for linha in matrizC:
+        for e in linha:
+            print(f'[ {e:^5} ]', end='')
+        print()
+
+elif case == 3:
+    constante = int(input("Entre com o valor da constante"))
+
+
+    for a in range(2):
+        for b in range(2):
+            matrizA[a][b] += constante
+            matrizB[a][b] += constante
+
+    for linha in matrizA:
+        for e in linha:
+            print(f'[ {e:^5} ] ', end=' ')
+        print()
+
+    print()
+
+    for linha in matrizB:
+        for e in linha:
+            print(f'[ {e:^5} ] ', end=' ')
+        print()
+
+    print()
+
+
+
+elif case ==4:
+
+    for linha in matrizA:
+        for e in linha:
+            print(f'[ {e:^5} ] ', end=' ')
+        print()
+
+    print()
+
+    for linha in matrizB:
+        for e in linha:
+            print(f'[ {e:^5} ] ', end=' ')
+        print()
+
+
+"""
+50)  Faça um programa que leia duas matriz 3x3 e calcule C = A * B
+
+
+
+"""
+
+matriza = []
+matrizb = []
+matrizc = []
+
+print("Complete a Matriz A")
+for i in range(3):
+    linha = []
+    for j in range(3):
+        x = int(input(f'Entre com o elemento {i+1}/{j+1}: '))
+        linha.append(x)
+    matriza.append(linha)
+
+print()
+
+print("Complete a Matriz B")
+for i in range(3):
+    linha = []
+    for j in range(3):
+        x = int(input(f'Entre com o elemento {i+1}/{j+1}: '))
+        linha.append(x)
+    matrizb.append(linha)
+
+for i in range(3):
+    linha = []
+    #aqui conta a linha
+    for j in range(3):
+        soma = 0
+        #Aqui conta a coluna
+        for k in range(3):
+            y = (matriza[i][k]*matrizb[k][j])
+            soma += y
+        linha.append(soma)
+    matrizc.append(linha)
+
+print("A matriz A é:")
+for i in matriza:
+    for e in i:
+        print(f'[{e:^5}]', end='')
+    print()
+
+print()
+
+print("A matriz B é:")
+for i in matrizb:
+    for e in i:
+        print(f'[{e:^5}]', end='')
+    print()
+print()
+
+
+print("A matriz C (A*B) é:")
+for i in matrizc:
+    for e in i:
+        print(f'[{e:^5}]', end='')
+    print()
+
+
+#matrizc[0][0] = matriza[0][0]*matrizb[0][0]+matriza[0][1]*matrizb[1][0]+matriza[0][2]*matrizb[2][0]
+#matrizc[0][1] = matriza[0][0]*matrizb[1][0]+matriza[0][1]*matrizb[1][0]+matriza[0][2]*matrizb[2][0]
+
+"""
+51)  Faça um programa que uma matriz 3x3 e calcule A^2
+
+
+
+"""
+
+matriza = []
+matrizb = []
+
+
+print("Complete a Matriz A")
+for i in range(3):
+    linha = []
+    for j in range(3):
+        x = int(input(f'Entre com o elemento {i+1}/{j+1}: '))
+        linha.append(x)
+    matriza.append(linha)
+
+
+for i in range(3):
+    linha = []
+    #aqui conta a linha
+    for j in range(3):
+        soma = 0
+        #Aqui conta a coluna
+        for k in range(3):
+            y = (matriza[i][k]*matriza[k][j])
+            soma += y
+        linha.append(soma)
+    matrizb.append(linha)
+
+
+
+print("A matriz (A*A) é:")
+for i in matrizb:
+    for e in i:
+        print(f'[{e:^5}]', end='')
+    print()
+print()
+
+"""
+52) Ache o maior produto de quatro números adjacentes em qualquer direção.
+
+
+"""
+
+matriz = [
+    [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
+    [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
+    [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65],
+    [52, 70, 95, 23, 4, 60, 11, 42, 69, 24, 68, 56, 1, 32, 56, 71, 37, 2, 36, 91],
+    [22, 31, 16, 71, 51, 67, 63, 89, 41, 92, 36, 54, 22, 40, 40, 28, 66, 33, 13, 80],
+    [24, 47, 32, 60, 99, 3, 45, 2, 44, 75, 33, 53, 78, 36, 84, 20, 35, 17, 12, 50],
+    [32, 98, 81, 28, 64, 23, 67, 10, 26, 38, 40, 67, 59, 54, 70, 66, 18, 38, 64, 70],
+    [67, 26, 20, 68, 2, 62, 12, 20, 95, 63, 94, 39, 63, 9, 40, 91, 66, 49, 94, 21],
+    [24, 55, 58, 5, 66, 73, 99, 29, 77, 17, 78, 78, 96, 83, 14, 88, 34, 89, 63, 72],
+    [21, 36, 23, 9, 75, 0, 76, 44, 20, 45, 35, 14, 0, 61, 33, 97, 34, 31, 33, 95],
+    [78, 17, 53, 28, 22, 75, 31, 67, 15, 94, 3, 80, 4, 62, 16, 14, 9, 53, 86, 92],
+    [16, 39, 5, 42, 96, 35, 31, 47, 55, 58, 88, 24, 0, 17, 54, 24, 36, 29, 85, 57],
+    [86, 56, 0, 48, 35, 71, 89, 7, 5, 44, 44, 37, 44, 60, 21, 58, 51, 54, 17, 58],
+    [19, 80, 81, 68, 5, 94, 47, 69, 28, 73, 92, 13, 86, 52, 17, 77, 4, 89, 55, 40],
+    [4, 52, 8, 83, 97, 35, 99, 16, 7, 97, 57, 32, 16, 26, 26, 79, 33, 27, 86, 66],
+    [88, 36, 68, 87, 57, 62, 20, 72, 3, 46, 33, 67, 46, 55, 12, 32, 63, 93, 53, 69],
+    [4, 42, 16, 73, 38, 25, 39, 11, 24, 94, 72, 18, 8, 46, 29, 32, 40, 62, 76, 36],
+    [20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 16],
+    [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 67, 65, 54],
+    [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
+]
+
+max_produto = 0
+
+# Verificação horizontal
+for i in range(20):
+    for j in range(17):
+        produto = matriz[i][j] * matriz[i][j+1] * matriz[i][j+2] * matriz[i][j+3]
+        if produto > max_produto:
+            max_produto = produto
+
+# Verificação vertical
+for j in range(20):
+    for i in range(17):
+        produto = matriz[i][j] * matriz[i+1][j] * matriz[i+2][j] * matriz[i+3][j]
+        if produto > max_produto:
+            max_produto = produto
+
+# Verificação diagonal principal (\)
+for i in range(17):
+    for j in range(17):
+        produto = matriz[i][j] * matriz[i+1][j+1] * matriz[i+2][j+2] * matriz[i+3][j+3]
+        if produto > max_produto:
+            max_produto = produto
+
+# Verificação diagonal secundária (/)
+for i in range(17):
+    for j in range(3, 20):
+        produto = matriz[i][j] * matriz[i+1][j-1] * matriz[i+2][j-2] * matriz[i+3][j-3]
+        if produto > max_produto:
+            max_produto = produto
+
+print("O maior produto de quatro números adjacentes é:", max_produto)
+
+
+#Resolvido com ajuda da IA
+
+"""
+53) Ache o maior produto de quatro números adjacentes em qualquer direção.
+
+
+"""
+
+
+def imprimir_tabuleiro(tabuleiro):
+    """Função para imprimir o tabuleiro de forma visual"""
+    print("\nTabuleiro atual:")
+    for linha in tabuleiro:
+        print("|", end="")
+        for casa in linha:
+            if casa == -1:
+                print(" X |", end="")
+            elif casa == 1:
+                print(" O |", end="")
+            else:
+                print("   |", end="")
+        print()
+
+
+def verificar_vencedor(tabuleiro, jogador):
+    """Verifica se o jogador especificado venceu"""
+    # Verifica linhas
+    for linha in tabuleiro:
+        if linha.count(jogador) == 3:
+            return True
+
+    # Verifica colunas
+    for coluna in range(3):
+        if all(tabuleiro[linha][coluna] == jogador for linha in range(3)):
+            return True
+
+    # Verifica diagonais
+    if tabuleiro[0][0] == tabuleiro[1][1] == tabuleiro[2][2] == jogador:
+        return True
+    if tabuleiro[0][2] == tabuleiro[1][1] == tabuleiro[2][0] == jogador:
+        return True
+
+    return False
+
+
+def proxima_jogada(tabuleiro):
+    """Determina a melhor jogada para o computador (jogador -1)"""
+
+    # 1. Primeiro verifica se pode vencer na próxima jogada
+    for i in range(3):
+        for j in range(3):
+            if tabuleiro[i][j] == 0:  # Se a casa está vazia
+                tabuleiro[i][j] = -1  # Simula a jogada
+                if verificar_vencedor(tabuleiro, -1):
+                    tabuleiro[i][j] = 0  # Desfaz a simulação
+                    return (i, j)  # Retorna a jogada vencedora
+                tabuleiro[i][j] = 0  # Desfaz a simulação
+
+    # 2. Se não pode vencer, verifica se precisa bloquear o oponente
+    for i in range(3):
+        for j in range(3):
+            if tabuleiro[i][j] == 0:  # Se a casa está vazia
+                tabuleiro[i][j] = 1  # Simula jogada do oponente
+                if verificar_vencedor(tabuleiro, 1):
+                    tabuleiro[i][j] = -1  # Bloqueia a jogada do oponente
+                    return (i, j)
+                tabuleiro[i][j] = 0  # Desfaz a simulação
+
+    # 3. Estratégias para quando não há jogadas urgentes
+
+    # a) Jogar no centro se estiver livre
+    if tabuleiro[1][1] == 0:
+        return (1, 1)
+
+    # b) Jogar nos cantos se estiverem livres
+    cantos = [(0, 0), (0, 2), (2, 0), (2, 2)]
+    for i, j in cantos:
+        if tabuleiro[i][j] == 0:
+            return (i, j)
+
+    # c) Jogar nas laterais se estiverem livres
+    laterais = [(0, 1), (1, 0), (1, 2), (2, 1)]
+    for i, j in laterais:
+        if tabuleiro[i][j] == 0:
+            return (i, j)
+
+    # Se não houver jogadas disponíveis (empate)
+    return None
+
+
+# Exemplo de uso
+tabuleiro = [
+    [-1, 1, 1],
+    [-1, -1, 0],
+    [0, 1, 0]
+]
+
+imprimir_tabuleiro(tabuleiro)
+
+jogada = proxima_jogada(tabuleiro)
+
+if jogada:
+    print(f"\nPróxima jogada recomendada: linha {jogada[0] + 1}, coluna {jogada[1] + 1}")
+    # Aplicando a jogada no tabuleiro
+    tabuleiro[jogada[0]][jogada[1]] = -1
+    imprimir_tabuleiro(tabuleiro)
+else:
+    print("\nO jogo terminou em empate!")
